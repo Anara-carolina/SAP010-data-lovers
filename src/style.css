@@ -1,0 +1,57 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body{
+  font-family: ;
+  padding: 0;
+  margin: 0;
+}
+.searc{
+  width:100%;
+  background-color: black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+input{
+  width: 97%;
+  height: 50px;
+  padding-left: 20px;
+  font-size: 20px;
+  border-radius: 6px;
+  border: 1px solid #d1cccc;
+  margin: 15px;
+}
+img{
+  width: 5%;
+}
+#listCards {
+  width: 98%;
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 18px;
+  position: absolute;
+  top: 55px;
+  
+  
+}
+li {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  background:#e6e3e3;
+  font-size: 18px;
+  color: black;
+  padding: 20px; 
+}
+li:hover{
+  background: #a3a0a0;
+}
+span{
+  margin-left: 25px;
+}
+
