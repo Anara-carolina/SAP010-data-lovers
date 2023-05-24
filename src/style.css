@@ -40,7 +40,7 @@ img{
   
 }
 li {
-  display: flex;
+  display: none;
   align-items: center;
   border: 1px solid #ddd;
   background:#e6e3e3;
@@ -55,3 +55,10 @@ span{
   margin-left: 25px;
 }
 
+p {
+  text-align: justify;
+  margin: 35px;
+}
+h1 {
+  margin: 30px;
+}
