@@ -6,6 +6,10 @@ body{
   /*font-family: ;*/
   padding: 0;
   margin: 0;
+  background-image: url("imagens/fundo.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 .searc{
   width:100%;
@@ -37,7 +41,6 @@ img{
   position: absolute;
   top: 55px;
   
-  
 }
 .listCards {
   display: none;
@@ -61,4 +64,85 @@ p {
 }
 h1 {
   margin: 30px;
+}
+
+.menu{
+  width: 40px;
+}
+
+.chec{
+  display: none;
+}
+
+.filtro01 {
+  background-color: rgba(119, 111, 111, 0.5);
+  width: 300px;
+  height: 100%;
+  left: -300px;
+  position: absolute;
+  transition: all .5s;
+}
+
+.chec[type="checkbox"]:checked + .imgmenu + .filtro01 {
+  transform: translateX(300px);
+}
+.arcanos {
+  display: block;
+  padding: 10px 0;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+  margin-left: 0;
+  text-align: left;
+}
+
+.arcanos:hover{
+  background-color: bisque;
+  color: black;
+}
+
+.imgmenu {
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+}
+
+.lista {
+  margin-top: 70px;
+  padding: 20px 5px;
+  width: 100%;
+}
+
+.content {
+  float: right;
+  width: calc(100% - 350px);
+  padding: 20px;
+}
+
+.content .imgbruxa {
+  margin-right: 20px;
+  float: right;
+  width: 150px; 
+  border-radius: 20px;
+}
+
+.content .imgbruxa1 {
+  float: left;
+  width: 150px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.content h1 {
+  margin-top: 0;
+  margin-left: 190px;
+  font-size: 50px; 
+  color: bisque;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+}
+
+.content p {
+  font-size: 20px; 
+  color: bisque;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
 }
