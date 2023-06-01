@@ -48,7 +48,7 @@ const cardData = [
       "name_short": "ar05",
       "name": "O Hierofante",
       "value": 5,
-      "meaning_up": "Casamento, aliança, cativeiro, servidão; segundo outra interpretação, misericórdia e bondade; inspiração; o homem a quem o Consultante recorre.",
+      "meaning_up": "Casamento, aliança, cativeiro, servidão; segundo outra interpretação, misericórdia e bondade; inspiração.",
       "meaning_rev": "Sociedade, boa compreensão, concórdia, excesso de bondade, fraqueza.",
       "desc":  "Ele usa a tríplice coroa e está sentado entre duas colunas, mas não são as do Templo que são guardadas pela Suma Sacerdotisa. Em sua mão esquerda, ele segura um cetro terminando na cruz tripla, e com sua mão direita, ele faz o conhecido sinal eclesiástico chamado de esoterismo, distinguindo entre a parte manifesta e oculta da doutrina. É notável, nesse contexto, que a Suma Sacerdotisa não faz nenhum sinal. Aos seus pés estão as chaves cruzadas, e dois ministros sacerdotais ajoelham-se diante dele. Ele tem sido usualmente chamado de Papa, o que é uma aplicação particular do cargo mais geral que ele simboliza. Ele é o poder governante da religião externa, enquanto a Suma Sacerdotisa é o gênio predominante do poder esotérico e retirado. Os significados adequados desta carta sofreram uma mistura lamentável de quase todas as mãos. O Grande Oriente diz corretamente que o Hierofante é o poder das chaves, a doutrina exotérica ortodoxa e o lado externo da vida que leva à doutrina; mas ele certamente não é o príncipe da doutrina oculta, como sugeriu outro comentador.\nEle é antes a summa totius theologiæ, quando esta passou para a máxima rigidez de expressão; mas ele simboliza também todas as coisas que são justas e sagradas no lado manifesto. Como tal, ele é o canal da graça pertencente ao mundo da instituição, distinto do mundo da Natureza, e ele é o líder da salvação para a raça humana em geral. Ele é a ordem e a cabeça da hierarquia reconhecida, que é o reflexo de uma outra e maior ordem hierárquica; mas pode acontecer que o pontífice esqueça o significado de seu estado simbólico e aja como se contivesse dentro de suas próprias medidas tudo o que seu signo significa ou seu símbolo busca mostrar. Ele não é, como se pensava, a filosofia - exceto no lado teológico; ele não é inspiração; e ele não é religião, embora seja uma forma de sua expressão.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg"
@@ -129,7 +129,7 @@ const cardData = [
       "name_short": "ar13",
       "name": "A Morte",
       "value": 13,
-      "meaning_up": "Fim, mortalidade, destruição, corrupção; também, para um homem, a perda de um benfeitor; para uma mulher, muitas contrariedades; para uma jovem, fracasso nos projetos matrimoniais.",
+      "meaning_up": "Fim, mortalidade, destruição, corrupção; também, para um homem, a perda de um benfeitor.",
       "meaning_rev":  "Inércia, sono, letargia, petrificação, sonambulismo; esperança destruída.",
       "desc": "O véu ou máscara da vida é perpetuado na mudança, transformação e passagem do inferior para o superior, e isso é representado de maneira mais adequada no Tarô retificado por uma das visões apocalípticas do que pela noção crua da caveira ceifadora. Por trás disso está todo o mundo da ascensão no espírito. O misterioso cavaleiro se move lentamente, carregando uma bandeira negra com a Rosa Mística, que significa vida. Entre duas colunas no limite do horizonte brilha o sol da imortalidade. O cavaleiro não carrega arma visível, mas rei, criança e donzela caem diante dele, enquanto um prelado de mãos postas aguarda o seu fim.\nNão há necessidade de salientar que a sugestão de morte que fiz em relação à carta anterior deve ser entendida misticamente, mas esse não é o caso na presente instância. O trânsito natural do homem para a próxima etapa de seu ser pode ser uma forma de seu progresso, mas a entrada exótica e quase desconhecida, ainda nesta vida, no estado de morte mística é uma mudança na forma de consciência e a passagem para um estado no qual a morte comum não é nem o caminho nem a porta. As explicações ocultas existentes sobre a carta 13 são, em geral, melhores do que o habitual: renascimento, criação, destino, renovação e outros.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/d/d7/RWS_Tarot_13_Death.jpg"
@@ -149,7 +149,7 @@ const cardData = [
       "name_short": "ar15",
       "name":  "O Diabo",
       "value": 15,
-      "meaning_up":  "Ravage, violência, veemência, esforços extraordinários, força, fatalidade; aquilo que é predestinado, mas não é, por esse motivo, maléfico.",
+      "meaning_up":  "Ravage, violência, veemência, esforços extraordinários, força, fatalidade; aquilo que é predestinado, mas não,  maléfico.",
       "meaning_rev":  "Fatalidade maligna, fraqueza, pequenez, cegueira.",
       "desc": "O desenho é uma acomodação, meio-termo ou harmonia, entre vários motivos mencionados na primeira parte. O Bode Cornífero de Mendes, com asas como as de um morcego, está em pé sobre um altar. No centro do estômago, há o sinal de Mercúrio. A mão direita está erguida e estendida, sendo o oposto da bênção que é concedida pelo Hierofante no quinto arcano. Na mão esquerda, há uma grande tocha acesa, invertida em direção à terra. Um pentagrama invertido está na testa. Há um anel na frente do altar, de onde duas correntes são levadas aos pescoços de duas figuras, masculina e feminina. Estas são análogas às do quinto arcano, como se fossem Adão e Eva depois da Queda. Aqui está a corrente e a fatalidade da vida material.\nAs figuras têm cauda, para significar a natureza animal, mas há inteligência humana nos rostos, e aquele que está exaltado acima deles não será o seu mestre para sempre. Mesmo agora, ele também é um escravo, sustentado pelo mal que está nele e cego para a liberdade do serviço. Com mais do que seu habitual desprezo pelas artes que ele fingia respeitar e interpretar como mestre nelas, Éliphas Lévi afirma que a figura bafomética é a ciência oculta e a magia. Outro comentador diz que, no mundo Divino, ela significa predestinação, mas não há correspondência naquele mundo com as coisas que aqui embaixo são brutais. O que ela realmente significa é o Morador do Limiar fora do Jardim Místico, quando aqueles que comeram do fruto proibido são expulsos dali.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg"
@@ -159,7 +159,7 @@ const cardData = [
       "name_short": "ar16",
       "name": "A Torre",
       "value": 16,
-      "meaning_up":  "Miséria, angústia, indigência, adversidade, calamidade, desgraça, decepção, ruína. É um arcano em particular de catástrofe imprevista.",
+      "meaning_up":  "Miséria, angústia, indigência, adversidade, calamidade, desgraça, decepção, ruína.",
       "meaning_rev":  "De acordo com uma versão, o mesmo em menor grau, também opressão, aprisionamento, tirania.",
       "desc": "As explicações ocultas associadas a esta carta são escassas e em sua maioria desconcertantes. É inútil indicar que ela retrata a torre em todos os seus aspectos, pois isso é evidente na superfície. Diz-se ainda que ela contém a primeira alusão a uma construção material, mas não concebo que a Torre seja mais ou menos material do que as colunas que encontramos em três casos anteriores. Não vejo nada que justifique Papus em supor que ela seja literalmente a queda de Adão, mas há mais a favor de sua alternativa - que ela significa a materialização da palavra espiritual. O bibliógrafo Christian imagina que seja a queda da mente, buscando penetrar o mistério de Deus. Concordo mais com o Grande Oriente, que é a ruína da Casa do Eu, quando o mal prevaleceu nela, e acima de tudo que é a destruição de uma Casa de Doutrina. Entendo que a referência é, no entanto, a uma Casa da Falsidade. Ilustra também de forma abrangente a antiga verdade de que se o Senhor não construir a casa, em vão trabalham os que a constroem. Há um sentido em que a catástrofe é um reflexo do arcano anterior, mas não no lado do simbolismo que tentei indicar ali. É mais corretamente uma questão de analogia; um está relacionado com a queda no estado material e animal, enquanto o outro significa destruição no lado intelectual. A Torre foi mencionada como o castigo do orgulho e do intelecto, subjugados na tentativa de penetrar o Mistério de Deus; mas, em nenhum dos casos, essas explicações explicam as duas pessoas que são as vítimas vivas. Um é a palavra literal tornada nula e o outro a sua falsa interpretação. Em um sentido ainda mais profundo, pode também significar o fim de uma dispensação, mas não há possibilidade aqui de considerar essa questão complexa.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg"
@@ -199,7 +199,7 @@ const cardData = [
       "name_short": "ar20",
       "name":  "O Último Julgamento",
       "value": 20,
-      "meaning_up": "Mudança de posição, renovação, resultado. Outra interpretação especifica perda total por meio de processo judicial.",
+      "meaning_up": "Mudança de posição, renovação, resultado. Outra interpretação especifica de processo judicial.",
       "meaning_rev":  "Fraqueza, pusilanimidade, simplicidade; também deliberação, decisão, sentença.",
       "desc":"Eu disse que esse símbolo é essencialmente invariável em todos os baralhos de Tarô, ou pelo menos as variações não alteram seu caráter. O grande anjo aqui está envolto em nuvens, mas ele sopra sua trombeta com estandarte, e a cruz, como de costume, é exibida no estandarte. Os mortos estão se levantando de suas tumbas - uma mulher à direita, um homem à esquerda e entre eles seu filho, cuja parte de trás está virada. Mas nesta carta há mais do que três que estão sendo restaurados, e achou-se que valia a pena fazer essa variação para ilustrar a insuficiência das explicações atuais. Deve-se observar que todas as figuras estão unidas no assombro, adoração e êxtase expressos por suas atitudes. Esta é a carta que registra a realização do grande trabalho de transformação em resposta ao chamado do Supremo - chamado este que é ouvido e respondido de dentro.\nAqui está a indicação de um significado que não pode ser desenvolvido mais profundamente no presente local. O que há dentro de nós que toca uma trombeta e tudo o que é inferior em nossa natureza se eleva em resposta - quase num instante, quase no piscar de olhos? Que a carta continue a retratar, para aqueles que não podem ver além, o Último Julgamento e a ressurreição no corpo natural; mas que aqueles que têm olhos interiores olhem e descubram junto com isso. Eles entenderão que ela foi chamada verdadeiramente no passado de uma carta de vida eterna, e por esse motivo pode ser comparada àquela que é conhecida como Temperança.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/d/dd/RWS_Tarot_20_Judgement.jpg"
@@ -227,23 +227,61 @@ const cardData = [
     
   ]
 
-  // Adicione mais objetos com as informações para os outros cards
-  // ...
+ 
 
 
 // Criar os cards e adicionar ao container
 for (let i = 0; i < cardData.length; i++) {
   const card = document.createElement('div');
-  card.classList.add('card', 'card-item');
-  
+  card.classList.add('card', 'card-item', 'clickable-card');
+
+  const frontElement = document.createElement('div');
+  frontElement.classList.add('card-front');
+
+  const imageElement = document.createElement('img');
+  imageElement.src = cardData[i].img;
+  imageElement.classList.add('card-image');
+
+  frontElement.appendChild(imageElement);
+  card.appendChild(frontElement);
+
+  const backElement = document.createElement('div');
+  backElement.classList.add('card-back');
+
   const nameElement = document.createElement('h2');
   nameElement.textContent = cardData[i].name;
-  
+  nameElement.classList.add('hidden');
+
   const meaningElement = document.createElement('p');
   meaningElement.textContent = cardData[i].meaning_up;
-  
-  card.appendChild(nameElement);
-  card.appendChild(meaningElement);
-  
+  meaningElement.classList.add('hidden');
+
+  backElement.appendChild(nameElement);
+  backElement.appendChild(meaningElement);
+  card.appendChild(backElement);
+
+  card.addEventListener('click', function () {
+    flipCard(card);
+  });
+
   container.appendChild(card);
+}
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+
+  const imageElement = card.querySelector('.card-image');
+  const textElements = card.querySelectorAll('.card-back h2, .card-back p');
+
+  if (card.classList.contains('flipped')) {
+    imageElement.style.display = 'none';
+    textElements.forEach((element) => {
+      element.classList.remove('hidden');
+    });
+  } else {
+    imageElement.style.display = 'block';
+    textElements.forEach((element) => {
+      element.classList.add('hidden');
+    });
+  }
 }
