@@ -94,7 +94,12 @@ h1 {
 }
 .lista .bigger,
 .lista .minors,
-.lista .home-page {
+.lista .home-page,
+.lista .copas,
+.lista .ouros,
+.lista .paus,
+.lista .espadas,
+.lista .cardall {
   display: block;
   padding: 10px 0;
   margin: 0;
@@ -106,7 +111,12 @@ h1 {
 
 .lista .bigger:hover,
 .lista .minors:hover,
-.lista .home-page:hover {
+.lista .home-page:hover,
+.lista .copas:hover,
+.lista .ouros:hover,
+.lista .paus:hover,
+.lista .espadas:hover,
+.lista .cardall:hover {
   background-color: bisque;
   color: black;
 }
