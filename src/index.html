@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -10,44 +10,54 @@
 </head>
 
 <body>
-  <section class="search">
-    <input type="text" placeholder="Qual carta você procura?">
-
-    <input type="checkbox" id="check" class="chec">
-    <label for="check" class="imgmenu">
-      <img src="tarotimag/menu-icon-13.png" class="menu">
-    </label>
-
-    <nav class="filtro01">
-      <ul class="lista">
-        <li><a href="" class="arcanos">Arcanos maiores</a></li>
-        <li><a href="" class="arcanos">Arcanos menores</a></li>
+  <main>
+    <section class="search">
+      <input type="text" placeholder="Qual carta você procura?">
+      <ul id="listCards">
       </ul>
-    </nav>
-  </section>
-  <div class="content">
-    <img src="tarotimag/anara.jpg" alt="Imagem" class="imgbruxa">
-    <img src="tarotimag/dara.jpg" alt="Imagem" class="imgbruxa1">
-    <div>
+    </section>
+    <section>
+      <input type="checkbox" id="check" class="chec">
+      <label for="check" class="imgmenu">
+        <img src="tarotimag/cristal.jpg" class="menu">
+      </label>
+      <nav class="filtro01">
+        <ul class="lista">
+          <li><a href="index.html" class="home-page">Pagina Inicial</a></li>
+          <li><a href="maiores.html" class="bigger">Arcanos maiores</a></li>
+          <li><a href="menores.html" class="minors">Arcanos menores</a></li>
+        </ul>
+       
+      </nav>
+
+    </section>
+    <div class="content">
       <h1>Historia do Tarot</h1>
-      
       <p>
         O <strong>Tarot</strong> é um sistema antigo que reflete a experiência humana através de arquétipos. Embora
         tenha sido usado principalmente para adivinhação ao longo dos séculos, perdendo suas características
-        originais, é importante resgatar seu simbolismo e entender seu potencial. O Tarot possui raízes culturais ancestrais, como
-        referências egípcias e da Grécia antiga. Na Europa medieval, o Tarot foi disfarçado como um jogo para evitar
-        perseguição da igreja.
+        originais,<br>
+        é importante resgatar seu simbolismo e entender seu potencial. O Tarot possui raízes culturais ancestrais,
+        como
+        referências egípcias e da Grécia antiga. Na Europa medieval, o Tarot foi disfarçado como um<br> jogo para
+        evitar
+        perseguição da igreja.<br>
       </p>
-      
       <p>
-        O baralho tradicional que conhecemos hoje é uma versão simplificada do Tarot. Historicamente, o Tarot ressurgiu
-        em diferentes épocas, mantendo-se oculto e usado secretamente. É compreensível que pessoas sem contato prévio com o Tarot possam ter dúvidas sobre seu significado, mas é importante explorar mais a fundo antes de tirar conclusões precipitadas. O Tarot é uma ferramenta rica para o autoconhecimento e convida à reflexão e experimentação.
+        O baralho tradicional que conhecemos hoje é uma versão simplificada do Tarot. Historicamente, o Tarot
+        ressurgiu
+        em diferentes épocas, mantendo-se oculto e usado secretamente. É compreensível que pessoas <br>
+        sem contato prévio com o Tarot possam ter dúvidas sobre seu significado, mas é importante explorar mais a
+        fundo
+        antes de tirar conclusões precipitadas. O Tarot é uma ferramenta rica para o autoconhecimento<br>
+        e convida à reflexão e experimentação.
       </p>
     </div>
-  </div>
+  </main>
   <footer>
   </footer>
 
   <script src="main.js" type="module"></script>
 </body>
+
 </html>
