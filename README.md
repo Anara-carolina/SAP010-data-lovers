@@ -1,4 +1,4 @@
-## Em construção 
+## Em construção (Tarot) 
 ## 9. Checklist
 
 * [ ] Usar VanillaJS.
