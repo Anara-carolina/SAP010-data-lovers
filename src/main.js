@@ -3,6 +3,11 @@ import cardData from './tarot.js';
 const container = document.querySelector('#cardContainer');
 const linkBigger = document.querySelector('.bigger');
 const linkMinors = document.querySelector('.minors');
+const linkCardall = document.querySelector('.cardall');
+const linkCopas = document.querySelector('.copas');
+const linkOuros = document.querySelector('.ouros');
+const linkPaus = document.querySelector('.paus');
+const linkEspadas = document.querySelector('.espadas');
 let currentFilter = ''; // Variável para armazenar o tipo de filtro selecionado
 
 // Criar os cards e adicionar ao container
@@ -33,7 +38,7 @@ function flipCard(card) {
 
 function createCardElement(data) {
   const card = document.createElement('div');
-  card.classList.add('card', 'card-item', 'clickable-card', data.type); // Adicione a classe de tipo ao card
+  card.classList.add('card', 'card-item', 'clickable-card', data.type, data.suit); // Adicione a classe de tipo ao card
 
   const frontElement = document.createElement('div');
   frontElement.classList.add('card-front');
@@ -67,13 +72,20 @@ function createCardElement(data) {
   return card;
 }
 
-function displayCards(filterType = '') {
+function displayCards(filters) {
   const cards = container.querySelectorAll('.card');
   cards.forEach((card) => {
-    if (filterType === '' || card.classList.contains(filterType)) {
-      card.style.display = 'block'; // Exibe a carta se o tipo corresponder
+    let shouldDisplay = false;
+    filters.forEach((filter) => {
+      if (filter === '' || filter === 'all' || card.classList.contains(filter)) {
+        shouldDisplay = true;
+      }
+    });
+
+    if (shouldDisplay) {
+      card.classList.remove('hidden');
     } else {
-      card.style.display = 'none'; // Oculta a carta se o tipo não corresponder
+      card.classList.add('hidden');
     }
   });
 }
@@ -96,6 +108,7 @@ linkBigger.addEventListener('click', function () {
     displayCards('maior'); // Exibe apenas os arcanos maiores
   }
 });
+
 linkMinors.addEventListener('click', function () {
   if (currentFilter !== 'menor') { // Verifica se o filtro já está ativo
     currentFilter = 'menor';
@@ -104,12 +117,58 @@ linkMinors.addEventListener('click', function () {
   }
 });
 
-// Obtém o parâmetro "type" da URL
+linkCardall.addEventListener('click', function () {
+  if (currentFilter !== 'all') { // Verifica se o filtro já está ativo
+    currentFilter = 'all';
+    activateFilterLink(linkCardall);
+    displayCards([]); // Exibe todas as cartas
+  }
+});
+
+linkCopas.addEventListener('click', function () {
+  if (currentFilter !== 'copas') { // Verifica se o filtro já está ativo
+    currentFilter = 'copas';
+    activateFilterLink(linkCopas);
+    displayCards('copas'); // Exibe apenas as cartas de copas
+  }
+});
+
+linkOuros.addEventListener('click', function () {
+  if (currentFilter !== 'ouros') { // Verifica se o filtro já está ativo
+    currentFilter = 'ouros';
+    activateFilterLink(linkOuros);
+    displayCards('ouros'); // Exibe apenas as cartas de ouros
+  }
+});
+
+linkPaus.addEventListener('click', function () {
+  if (currentFilter !== 'paus') { // Verifica se o filtro já está ativo
+    currentFilter = 'paus';
+    activateFilterLink(linkPaus);
+    displayCards('paus'); // Exibe apenas as cartas de paus
+  }
+});
+
+linkEspadas.addEventListener('click', function () {
+  if (currentFilter !== 'espadas') { // Verifica se o filtro já está ativo
+    currentFilter = 'espadas';
+    activateFilterLink(linkEspadas);
+    displayCards('espadas'); // Exibe apenas as cartas de espadas
+  }
+});
+
 const urlParams = new URLSearchParams(window.location.search);
 const filterType = urlParams.get('type');
+const filterSuit = urlParams.get('suit');
 
-// Exibe todos os cards inicialmente
-displayCards(filterType);
+// Cria uma lista de filtros
+const filters = [];
+if (filterType) {
+  filters.push(filterType);
+}
+if (filterSuit) {
+  filters.push(filterSuit);
+}
 
-
-console.log(cardData)
+// Exibe os cards com base nos filtros
+displayCards(filters);
