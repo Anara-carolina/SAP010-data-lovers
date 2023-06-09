@@ -186,3 +186,45 @@ if (filterSuit) {
 // Exibe os cards com base nos filtros
 displayCards(filters);
 
+//ordenação 
+
+// Selecionar os links de ordenação
+const ordaLink = document.querySelector('.orda');
+const ordzLink = document.querySelector('.ordz');
+
+// Event listener para o link de ordenação ascendente
+ordaLink.addEventListener('click', function () {
+  sortCardsByNameAsc();
+  // Atualize a exibição dos cards com a nova ordem
+});
+
+// Event listener para o link de ordenação descendente
+ordzLink.addEventListener('click', function () {
+  sortCardsByNameDesc();
+  // Atualize a exibição dos cards com a nova ordem
+});
+// Event listener para o link de ordenação ascendente
+ordaLink.addEventListener('click', function () {
+  sortCardsByNameAsc();
+  // Atualize a exibição dos cards com a nova ordem
+});
+
+// Event listener para o link de ordenação descendente
+ordzLink.addEventListener('click', function () {
+  sortCardsByNameDesc();
+  // Atualize a exibição dos cards com a nova ordem
+});
+
+
+function sortCardsByNameAsc() {
+  const sortedCards = cardData.sort((a, b) => a.name.localeCompare(b.name));
+  console.log(sortedCards);
+  // Atualize a exibição dos cards com a nova ordem
+}
+
+function sortCardsByNameDesc() {
+  const sortedCards = cardData.sort((a, b) => b.name.localeCompare(a.name));
+  console.log(sortedCards);
+  // Atualize a exibição dos cards com a nova ordem
+}
+

@@ -36,17 +36,7 @@ input{
 img{
   width: 5%;
 }
-#listCards {
-  width: 98%;
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 18px;
-  position: absolute;
-  top: 55px;
-  
-  
-}
+
 .listCards {
   display: none;
   align-items: center;
@@ -54,8 +44,8 @@ img{
   background:#e6e3e3;
   font-size: 18px;
   color: black;
-  padding: 20px; 
-}
+  }
+
 li:hover{
   background: #a3a0a0;
 }
@@ -197,19 +187,14 @@ h1 {
   
  
   
-  #cardContainer {
+  .cardContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Alinhar os cards à esquerda */
+    justify-content: center; 
     margin-top: 20px;
     margin-left: 300px;
   }
   
-  
- 
-  
-  
-    
   
   .listCards {
     display: none;
@@ -339,6 +324,11 @@ h1 {
     .card {
       width: calc(50% - 40px);
       height: 300px;
+      cursor: pointer;
+      border-radius: 25px;
+      padding: 5px;
+      height:320px;
+      justify-content: center;
       border: 1px solid gray;
       padding: 10px;
       margin: 20px;
@@ -366,8 +356,9 @@ h1 {
     .card-image {
       width: 100%; /* Define a largura da imagem como 100% */
       height: 100%; /* Define a altura da imagem como 100% */
-      object-fit: cover; /* Redimensiona a imagem para preencher o espaço sem distorção */
-    
+      border-radius: 25px;
+      justify-content: center;
+
     }
     .clickable-card {
       transition: transform 0.5s ease; /* Adiciona uma transição suave para a transformação */
@@ -379,29 +370,15 @@ h1 {
     }
     
     
-    .card-back {
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 10px;
-      box-sizing: border-box;
-      transform: scaleX(-1);
     
-      /* Adicione um limite de altura para ajustar o texto dentro do card */
-      max-height: 100%;
-    }
+    
   
     
     .text-container {
       display: none; /* Oculta o texto por padrão */
     }
     
-    .card-back {
-      color: white; /* Define a cor do texto como branco */
-    }
+   
     .card-front {
       position: relative;
     }
@@ -438,28 +415,34 @@ h1 {
   
   
   .card-back {
+    box-sizing: border-box;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     padding: 10px;
-    box-sizing: border-box;
     transform: scaleX(-1);
-  
-    /* Adicione um limite de altura para ajustar o texto dentro do card */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    height: 325px; /* Define uma altura fixa para exibir a barra de rolagem */
     max-height: 100%;
+
   }
+
+  
+  .card-back h2,
+  .card-back p {
+  color: bisque;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+
+}
+
 
   
   .text-container {
     display: none; /* Oculta o texto por padrão */
   }
   
-  .card-back {
-    color: white; /* Define a cor do texto como branco */
-  }
   .card-front {
     position: relative;
   }
