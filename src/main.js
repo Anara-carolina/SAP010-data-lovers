@@ -71,6 +71,8 @@ function createCardElement(data) {
   backElement.appendChild(meaningElement);
   card.appendChild(backElement);
 
+  
+// flip
   card.addEventListener('click', function () {
     flipCard(card);
   });
