@@ -1,4 +1,5 @@
 import cardData from './tarot.js';
+import dataTarot from './data.js'
 
 // Selecionar o container onde os cards serão exibidos
 const container = document.querySelector('#cardContainer');
@@ -80,23 +81,7 @@ function createCardElement(data) {
   return card;
 }
 
-// Função para exibir os cards com base nos filtros selecionados
-function displayCards(filters) {
-  const cardElements = container.querySelectorAll('.card');
-  cardElements.forEach((card) => {
-    let shouldDisplay = false;
-    filters.forEach((filter) => {
-      if (filter === '' || filter === 'all' || card.classList.contains(filter)) {
-        shouldDisplay = true;
-      }
-    });
 
-    if (shouldDisplay) {
-      card.classList.remove('hidden');
-    } else {
-      card.classList.add('hidden');
-    }
-  });
 
   // Atualize o título de acordo com o filtro selecionado
   if (filters.length === 1) {
@@ -136,7 +121,7 @@ function displayCards(filters) {
     } else {
       titleElement.textContent = '';
     }
-  }
+  
   
   // Função para ativar o link de filtro atual e desativar os demais
   function activateFilterLink(link) {
@@ -230,3 +215,4 @@ displayCards(filters);
   
   
 
+console.log(dataTarot)
