@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
   <link rel="stylesheet" href="style.css" />
   <title>Data Lovers</title>
 </head>
-
 <body>
   <main>
     <section class="search">
@@ -20,8 +18,7 @@
       <input type="checkbox" id="check" class="chec">
       <label for="check" class="imgmenu">
         <img src="tarotimag/cristal.jpg" class="menu">
-        <h2 class="menutext">Menu</h2>
-      </label>
+      </label>jpg
       <nav class="filtro01">
         <ul class="lista">
           <li><a href="index.html" class="home-page">Introdução</a></li>
@@ -34,40 +31,23 @@
           <li><a href="cards.html?suit=espadas" class="espadas">Baralho de Espadas</a></li>
           <li><a href="cards.html?name" class="orda">ordenação A-Z</a></li>
           <li><a href="cards.html?name" class="ordz">ordenação Z-A</a></li>
-         
-
         </ul>
-       
       </nav>
-
+      <div id="filterInfo" class="filter-info"></div>
+      <div>
+        <h1 id="filterTitle" class="titulo"></h1>
+        <div id="cardContainer" class="card-container">
+        </div>
+      </div>
     </section>
-    <div class="content">
-      <img src="tarotimag/cartas.png" class="imgcartas" alt="imagem-cartas-tarot">
-      <h1>Historia do Tarot</h1>
-      <p>
-        O <strong>Tarot</strong> é um sistema antigo que reflete a experiência humana através de arquétipos. Embora
-        tenha sido usado principalmente para adivinhação ao longo dos séculos, perdendo suas características
-        originais,<br>
-        é importante resgatar seu simbolismo e entender seu potencial. O Tarot possui raízes culturais ancestrais,
-        como
-        referências egípcias e da Grécia antiga. Na Europa medieval, o Tarot foi disfarçado como um<br> jogo para
-        evitar
-        perseguição da igreja.<br>
-      </p>
-      <p>
-        O baralho tradicional que conhecemos hoje é uma versão simplificada do Tarot. Historicamente, o Tarot
-        ressurgiu
-        em diferentes épocas, mantendo-se oculto e usado secretamente. É compreensível que pessoas <br>
-        sem contato prévio com o Tarot possam ter dúvidas sobre seu significado, mas é importante explorar mais a
-        fundo
-        antes de tirar conclusões precipitadas. O Tarot é uma ferramenta rica para o autoconhecimento<br>
-        e convida à reflexão e experimentação.
-      </p>
-    </div>
   </main>
   <footer>
+    <div class="display"></div>
+    <div class="displaytext">
+      <h2>Projeto proposto pelo Bootcamp Laboratoria</h2>
+      <h3>Desenvolvido pelas graduandas</h3>
+    </div>
   </footer>
-
   <script src="main.js" type="module"></script>
 </body>
 

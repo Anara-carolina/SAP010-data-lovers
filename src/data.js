@@ -1,9 +1,5 @@
-// estas funciones son de ejemplo
+const cardTarot = [
+  
+];
 
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
+export default cardTarot;
