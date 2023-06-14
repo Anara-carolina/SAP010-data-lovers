@@ -1,5 +1,5 @@
 import cardData from './tarot.js';
-import dataTarot from './data.js'
+import dataTarot from './data.js';
 
 // Selecionar o container onde os cards serão exibidos
 const container = document.querySelector('#cardContainer');
@@ -16,12 +16,6 @@ const linkEspadas = document.querySelector('.espadas');
 
 // Variável para armazenar o tipo de filtro selecionado
 let currentFilter = '';
-
-// Criar os cards e adicioná-los ao container
-for (let i = 0; i < cardData.length; i++) {
-  const card = createCardElement(cardData[i]);
-  container.appendChild(card);
-}
 
 // Função para virar o card ao ser clicado
 function flipCard(card) {
@@ -80,6 +74,7 @@ function createCardElement(data) {
 
   return card;
 }
+
 function displayCards(filters) {
   const cardElements = container.querySelectorAll('.card');
   cardElements.forEach((card) => {
@@ -135,88 +130,87 @@ function displayCards(filters) {
   }
 }
 
-  
-  
-  // Função para ativar o link de filtro atual e desativar os demais
-  function activateFilterLink(link) {
-    const filterLinks = document.querySelectorAll('.filtro01 a');
-    filterLinks.forEach((filterLink) => {
-      filterLink.classList.remove('active');
-    });
-  
-    link.classList.add('active');
+// Função para ativar o link de filtro atual e desativar os demais
+function activateFilterLink(link) {
+  const filterLinks = document.querySelectorAll('.filtro01 a');
+  filterLinks.forEach((filterLink) => {
+    filterLink.classList.remove('active');
+  });
+
+  link.classList.add('active');
+}
+
+// Event listener para o link "Arcanos Maiores"
+linkBigger.addEventListener('mouseover', function () {
+  if (currentFilter !== 'maior') { 
+    currentFilter = 'maior';
+    activateFilterLink(linkBigger);
+    displayCards(['maior']); // Exibe apenas os arcanos maiores
   }
-  
-  // Event listener para o link "Arcanos Maiores"
-  linkBigger.addEventListener('click', function () {
-    if (currentFilter !== 'maior') { 
-      currentFilter = 'maior';
-      activateFilterLink(linkBigger);
-      displayCards(['maior']); // Exibe apenas os arcanos maiores
-    }
-  });
-  
-  // Event listener para o link "Arcanos Menores"
-  linkMinors.addEventListener('click', function () {
-    if (currentFilter !== 'menor') { 
-      currentFilter = 'menor';
-      activateFilterLink(linkMinors);
-      displayCards(['menor']); // Exibe apenas os arcanos menores
-    }
-  });
-  
-  // Event listener para o link "Todas as Cartas"
-  linkCardall.addEventListener('click', function () {
-    if (currentFilter !== 'all') {
-      currentFilter = 'all';
-      activateFilterLink(linkCardall);
-      displayCards(['all']); // Exibe todas as cartas, passando uma lista vazia
-    }
-  });
-  
-  // Event listener para o link "Copas"
-  linkCopas.addEventListener('click', function () {
-    if (currentFilter !== 'copas') { 
-      currentFilter = 'copas';
-      activateFilterLink(linkCopas);
-      displayCards(['copas']); // Exibe apenas as cartas de copas
-    }
-  });
-  
-  // Event listener para o link "Ouros"
-  linkOuros.addEventListener('click', function () {
-    if (currentFilter !== 'ouros') {
-      currentFilter = 'ouros';
-      activateFilterLink(linkOuros);
-      displayCards(['ouros']); // Exibe apenas as cartas de ouros
-    }
-  });
-  
-  // Event listener para o link "Paus"
-  linkPaus.addEventListener('click', function () {
-    if (currentFilter !== 'paus') { 
-      currentFilter = 'paus';
-      activateFilterLink(linkPaus);
-      displayCards(['paus']); // Exibe apenas as cartas de paus
-    }
-  });
-  
-  // Event listener para o link "Espadas"
-  linkEspadas.addEventListener('click', function () {
-    if (currentFilter !== 'espadas') { 
-      currentFilter = 'espadas';
-      activateFilterLink(linkEspadas);
-      displayCards(['espadas']); // Exibe apenas as cartas de espadas
-    }
-  });
-  
-  // Obter os parâmetros de filtro da URL, se houver
-  const urlParams = new URLSearchParams(window.location.search);
-  const filterType = urlParams.get('type');
-  const filterSuit = urlParams.get('suit');
-  
-  // Cria uma lista de filtros com base nos parâmetros da URL
-  const filters = [];
+});
+
+// Event listener para o link "Arcanos Menores"
+linkMinors.addEventListener('mouseover', function () {
+  if (currentFilter !== 'menor') { 
+    currentFilter = 'menor';
+    activateFilterLink(linkMinors);
+    displayCards(['menor']); // Exibe apenas os arcanos menores
+  }
+});
+
+// Event listener para o link "Todas as Cartas"
+linkCardall.addEventListener('mouseover', function () {
+  if (currentFilter !== 'all') {
+    currentFilter = 'all';
+    activateFilterLink(linkCardall);
+    displayCards(['all']); // Exibe todas as cartas, passando uma lista vazia
+  }
+});
+
+// Event listener para o link "Copas"
+linkCopas.addEventListener('mouseover', function () {
+  if (currentFilter !== 'copas') { 
+    currentFilter = 'copas';
+    activateFilterLink(linkCopas);
+    displayCards(['copas']); // Exibe apenas as cartas de copas
+  }
+});
+
+// Event listener para o link "Ouros"
+linkOuros.addEventListener('mouseover', function () {
+  if (currentFilter !== 'ouros') {
+    currentFilter = 'ouros';
+    activateFilterLink(linkOuros);
+    displayCards(['ouros']); // Exibe apenas as cartas de ouros
+  }
+});
+
+// Event listener para o link "Paus"
+linkPaus.addEventListener('mouseover', function () {
+  if (currentFilter !== 'paus') { 
+    currentFilter = 'paus';
+    activateFilterLink(linkPaus);
+    displayCards(['paus']); // Exibe apenas as cartas de paus
+  }
+});
+
+// Event listener para o link "Espadas"
+linkEspadas.addEventListener('mouseover', function () {
+  if (currentFilter !== 'espadas') { 
+    currentFilter = 'espadas';
+    activateFilterLink(linkEspadas);
+    displayCards(['espadas']); // Exibe apenas as cartas de espadas
+  }
+});
+
+
+// Obter os parâmetros de filtro da URL, se houver
+const urlParams = new URLSearchParams(window.location.search);
+const filterType = urlParams.get('type');
+const filterSuit = urlParams.get('suit');
+
+// Cria uma lista de filtros com base nos parâmetros da URL
+const filters = [];
 if (filterType) {
   filters.push(filterType);
 }
@@ -226,7 +220,40 @@ if (filterSuit) {
 
 // Exibe os cards com base nos filtros
 displayCards(filters);
-  
-  
 
-console.log(dataTarot)
+// Obter o parâmetro de ordenação da URL, se houver
+const sortParam = urlParams.get('sort');
+
+// Função para ordenar as cartas por nome
+function sortCardsByName(cards, sortOrder) {
+  cards.sort((a, b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+    if (sortOrder === 'name-asc') {
+      return nameA.localeCompare(nameB);
+    } else if (sortOrder === 'name-desc') {
+      return nameB.localeCompare(nameA);
+    } else {
+      return 0;
+    }
+  });
+}
+ 
+
+// Aplica a ordenação se o parâmetro de ordenação estiver presente
+if (sortParam) {
+  sortCardsByName(cardData, sortParam);
+}
+
+// Limpa o container antes de adicionar os cards
+container.innerHTML = '';
+
+// Cria os cards ordenados e adiciona-os ao container
+sortCardsByName(cardData, sortParam);
+for (let i = 0; i < cardData.length; i++) {
+  const card = createCardElement(cardData[i]);
+  container.appendChild(card);
+}
+
+console.log(dataTarot);
+

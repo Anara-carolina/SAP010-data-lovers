@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,62 +7,37 @@
   <link rel="stylesheet" href="style.css" />
   <title>Data Lovers</title>
 </head>
-
 <body>
-  <main>
-    <section class="search">
-      <input type="text" placeholder="Qual carta você procura?">
-      <ul id="listCards">
+  <section class="search">
+    <input type="text" placeholder="Qual carta você procura?">
+    <ul id="listCards"></ul>
+  </section>
+  <section>
+    <input type="checkbox" id="check" class="chec">
+    <label for="check" class="imgmenu">
+      <img src="tarotimag/cristal.jpg" class="menu">
+    </label>
+    <nav class="filtro01">
+      <ul class="lista">
+        <li><a href="index.html" class="home-page">Introdução</a></li>
+        <li><a href="cards.html?type=all" class="cardall">Baralho</a></li>
+        <li><a href="cards.html?type=maior" class="bigger">Arcanos maiores</a></li>
+        <li><a href="cards.html?type=menor" class="minors">Arcanos menores</a></li>
+        <li><a href="cards.html?suit=copas" class="copas">Baralho de copas</a></li>
+        <li><a href="cards.html?suit=ouros" class="ouros">Baralho de ouros</a></li>
+        <li><a href="cards.html?suit=paus" class="paus">Baralho de paus</a></li>
+        <li><a href="cards.html?suit=espadas" class="espadas">Baralho de Espadas</a></li>
+        <li><a href="cards.html?sort=name-asc" class="orda">ordenação A-Z</a></li>
+        <li><a href="cards.html?sort=name-desc" class="ordz">ordenação Z-A</a></li>
       </ul>
-    </section>
-    <section>
-      <input type="checkbox" id="check" class="chec">
-      <label for="check" class="imgmenu">
-        <img src="tarotimag/cristal.jpg" class="menu">
-      </label>jpg
-      <nav class="filtro01">
-        <ul class="lista">
-          <li><a href="index.html" class="home-page">Introdução</a></li>
-          <li><a href="cards.html?type=all" class="cardall">Baralho</a></li>
-          <li><a href="cards.html?type=maior" class="bigger">Arcanos maiores</a></li>
-          <li><a href="cards.html?type=menor" class="minors">Arcanos menores</a></li>
-          <li><a href="cards.html?suit=copas" class="copas">Baralho de copas</a></li>
-          <li><a href="cards.html?suit=ouros" class="ouros">Baralho de ouros</a></li>
-          <li><a href="cards.html?suit=paus" class="paus">Baralho de paus</a></li>
-          <li><a href="cards.html?suit=espadas" class="espadas">Baralho de Espadas</a></li>
-          <li><a href="cards.html?name" class="orda">ordenação A-Z</a></li>
-          <li><a href="cards.html?name" class="ordz">ordenação Z-A</a></li>
-
-        </ul>
-
-
-      </nav>
-      <div id="filterInfo" class="filter-info"></div>
-     <div>
+    </nav>
+  </section>
+    <div>
       <h1 id="filterTitle" class="titulo"></h1>
-
-      <div id="cardContainer" class="card-container">
-
-      </div>
-      </div>
-
-    </section>
-
-
-
-
-
-
-
-  </main>
-  <footer>
-    <div class="display"></div>
-    <div class="displaytext">
-      <h2>Projeto proposto pelo Bootcamp Laboratoria</h2>
-      <h3>Desenvolvido pelas graduandas</h3>
+      <p id="filterPercentage"></p>
+      <div id="cardContainer" class="card-container"></div>
     </div>
-  </footer>
+  <footer></footer>
   <script src="main.js" type="module"></script>
 </body>
-
 </html>
