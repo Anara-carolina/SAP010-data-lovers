@@ -1,5 +1,3 @@
-const cardTarot = [
-  
-];
+const cardTarot = [];
 
 export default cardTarot;
