@@ -1,5 +1,4 @@
 
-
 const cardTarot = [
   function displayCards(filters) {
     const cardElements = container.querySelectorAll('.card');
