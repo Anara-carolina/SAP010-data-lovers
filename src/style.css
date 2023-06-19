@@ -271,6 +271,7 @@ input {
 
  
   /*foother*/
+
   .display {
     position: absolute;
     width: 100%;
@@ -278,9 +279,7 @@ input {
     background: #0E0D0D;
     mix-blend-mode: saturation;
     display: flex;
-    align-items: center;
-    justify-content: center; /* Centralizar horizontalmente */
-    z-index: 1; 
+    
   }
   
   .displaytext {
@@ -298,7 +297,65 @@ input {
   }
   
 
-  
+  /*rodape*/
+  .container{
+    display: flex;
+ }
 
+ .div-anara{
+  margin-left: 14px;
+ }
+ .div-dara{
+  margin-left: 600px;
+
+ }
+
+
+  .bruxa{
+    border-radius:40px;
+    width: 100px; /* Defina a largura desejada para o elemento */
+   height: 150px; /* Defina a altura desejada para o elemento */
+   margin-left: 40px;
+   
+  }
+
+  .anara {
+    margin-left: 200px;
+    color: #FFFFFF;
+    margin-top: -130px; 
+    font-size: 25px;
+  }
+.imgit{
+    width: 80px;
+    height:80px;
+    margin-left: 180px;
+  }
   
+  .imglinkedin{
+    width:80px;
+    height:80px;
+  }
+
+  .dara {
+    margin-left:120px;
+    color: #FFFFFF;
+    margin-top: -130px; 
+    font-size: 25px;
+  }
+  .bruxa1{
+    border-radius:40px;
+    width: 100px; /* Defina a largura desejada para o elemento */
+   height: 150px; /* Defina a altura desejada para o elemento */
+   margin-right: 10%;
+  }
+.imgit1{
+    width: 80px;
+    height:80px;
+    margin-left: 120px;
+
+  }
   
+  .imglinkedin1{
+    width:80px;
+    height:80px;
+  }

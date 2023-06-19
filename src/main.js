@@ -14,6 +14,41 @@ const linkOuros = document.querySelector('.ouros');
 const linkPaus = document.querySelector('.paus');
 const linkEspadas = document.querySelector('.espadas');
 
+//imput por nome 
+const cardSearchInput = document.querySelector('#cardSearchInput');
+cardSearchInput.addEventListener('input', function () {
+  const cardName = cardSearchInput.value;
+  displayCardByName(cardName);
+});
+
+function displayCardByName(cardName) {
+  const trimmedCardName = cardName.trim(); // Remove espaços em branco antes e depois do texto
+
+  if (trimmedCardName === '') {
+    titleElement.textContent = ''; // Limpa o título do filtro
+    container.innerHTML = ''; // Limpa o container
+    sortCardsByName(cardData, sortParam); // Ordena as cartas novamente
+    for (let i = 0; i < cardData.length; i++) {
+      const card = createCardElement(cardData[i]);
+      container.appendChild(card);
+    }
+    return; // Sai da função para evitar a filtragem desnecessária
+  }
+
+  const filteredCards = cardData.filter((card) => card.name.toLowerCase().startsWith(trimmedCardName.toLowerCase()));
+
+  if (filteredCards.length > 0) {
+    container.innerHTML = '';
+
+    filteredCards.forEach((card) => {
+      const cardElement = createCardElement(card);
+      container.appendChild(cardElement);
+    });
+  } else {
+    container.innerHTML = 'Nenhuma carta encontrada.';
+  }
+}
+
 // Variável para armazenar o tipo de filtro selecionado
 let currentFilter = '';
 
@@ -129,7 +164,6 @@ function displayCards(filters) {
     titleElement.textContent = '';
   }
 }
-
 // Função para ativar o link de filtro atual e desativar os demais
 function activateFilterLink(link) {
   const filterLinks = document.querySelectorAll('.filtro01 a');
@@ -256,4 +290,4 @@ for (let i = 0; i < cardData.length; i++) {
 }
 
 console.log(dataTarot);
-
+console.log(cardData);
