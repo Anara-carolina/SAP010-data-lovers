@@ -23,10 +23,6 @@ for (let i = 0; i < cardData.length; i++) {
   container.appendChild(card);
 }
 
-
-
-
-
 // Event listener para o link "Arcanos Maiores"
 linkBigger.addEventListener("click", function () {
   if (currentFilter !== "maior") {

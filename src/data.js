@@ -11,7 +11,7 @@ function createCardElement(data) {
       data.type,
       data.suit
     );
-  
+
     const frontElement = document.createElement("div");
     frontElement.classList.add("card-front");
   

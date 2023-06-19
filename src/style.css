@@ -213,7 +213,7 @@ input {
   transform: scaleX(-1);
   overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
   height: 325px; /* Define uma altura fixa para exibir a barra de rolagem */
-  max-height: 100%;
+ max-height: 100%;
 }
 
 .card-back h2,
@@ -281,15 +281,14 @@ input {
   }
 }
 
-@media screen and (max-width: 1310px) {
+/*@media screen and (max-width: 1310px) {
   .text h1 {
     font-size: 5vh;
   }
   .text p {
     font-size: 2.5vh;
   }
-}
-
+}*/
 @media screen and (max-width: 1030px) {
   .img{
     height: 80%;
@@ -414,7 +413,7 @@ input {
   }
 
   .card-front img{
-    width: 300px;
+    width: 200px;
   }
 
 }
