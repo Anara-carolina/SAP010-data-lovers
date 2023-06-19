@@ -13,21 +13,16 @@ body {
   background-position: center center;
   height: 100vh;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 main {
   width: 100vw;
-  height: 100vh;
-}
-
-/*filtro lateral e barra de pesguisa*/
-.searc {
-  width: 100%;
-  background-color: black;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  height: 90vh;
+  
+  
 }
 
 input {
@@ -48,7 +43,6 @@ input {
   z-index: 1;
   display: flex;
   padding: 15px;
-  margin-top: 80px;
 }
 
 .chec {
@@ -412,4 +406,33 @@ input {
   main{
     height: 100%;
   }
+
+  .card-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-front img{
+    width: 300px;
+  }
+
+}
+
+footer{
+  position:static;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+}
+
+.content{
+  height: 90%;
+}
+.cards_pages{
+  height: 100%;
+  top: 0;
+  position: absolute;
+  overflow-y: scroll;
+  width: 100%;
 }

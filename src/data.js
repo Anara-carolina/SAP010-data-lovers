@@ -43,6 +43,25 @@ function createCardElement(data) {
     });
   
     return card;
+    // Função para virar o card ao ser clicado
+    function flipCard(card) {
+        card.classList.toggle("flipped");
+    
+        const imageElement = card.querySelector(".card-image");
+        const textElements = card.querySelectorAll(".card-back h2, .card-back p");
+    
+        if (card.classList.contains("flipped")) {
+        imageElement.style.display = "none";
+        textElements.forEach((element) => {
+            element.classList.remove("hidden");
+        });
+        } else {
+        imageElement.style.display = "block";
+        textElements.forEach((element) => {
+            element.classList.add("hidden");
+        });
+        }
+    }
   }
   
 // Função para criar um elemento de card com base nos dados fornecidos
@@ -114,5 +133,5 @@ function activateFilterLink(link) {
     link.classList.add("active");
   }
 
-  export { createCardElement, displayCards };
+  export { createCardElement, displayCards,activateFilterLink};
 

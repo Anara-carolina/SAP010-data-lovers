@@ -1,6 +1,6 @@
 import cardData from "./tarot.js";
 //import dataTarot from "./data.js";
-import { createCardElement, displayCards } from "./data.js";
+import { createCardElement, displayCards,activateFilterLink } from "./data.js";
 
 // Selecionar o container onde os cards serão exibidos
 const container = document.querySelector("#cardContainer");
@@ -23,25 +23,7 @@ for (let i = 0; i < cardData.length; i++) {
   container.appendChild(card);
 }
 
-// Função para virar o card ao ser clicado
-function flipCard(card) {
-  card.classList.toggle("flipped");
 
-  const imageElement = card.querySelector(".card-image");
-  const textElements = card.querySelectorAll(".card-back h2, .card-back p");
-
-  if (card.classList.contains("flipped")) {
-    imageElement.style.display = "none";
-    textElements.forEach((element) => {
-      element.classList.remove("hidden");
-    });
-  } else {
-    imageElement.style.display = "block";
-    textElements.forEach((element) => {
-      element.classList.add("hidden");
-    });
-  }
-}
 
 
 
