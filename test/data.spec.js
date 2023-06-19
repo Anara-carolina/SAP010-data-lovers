@@ -1,5 +1,4 @@
-import { example, anotherExample } from '../src/data.js';
-
+import { example, anotherExample } from "../src/data.js";
 
 describe("Teste da função de filtro de cartas", () => {
   it("Deve filtrar corretamente as cartas com base no filtro", () => {

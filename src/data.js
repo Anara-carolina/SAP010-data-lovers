@@ -1,5 +1,7 @@
-const cardTarot = [];
-// Função para criar um elemento de card com base nos dados fornecidos
+/*const cardTarot =[]
+export default cardTarot;*/
+const container = document.querySelector("#cardContainer");
+const titleElement = document.querySelector("#filterTitle");
 function createCardElement(data) {
     const card = document.createElement("div");
     card.classList.add(
@@ -42,8 +44,9 @@ function createCardElement(data) {
   
     return card;
   }
-
-  function displayCards(filters) {
+  
+// Função para criar um elemento de card com base nos dados fornecidos
+function displayCards(filters) {
     const cardElements = container.querySelectorAll(".card");
     cardElements.forEach((card) => {
       let shouldDisplay = false;
@@ -101,8 +104,7 @@ function createCardElement(data) {
       titleElement.textContent = "";
     }
   }
-
-  // Função para ativar o link de filtro atual e desativar os demais
+// Função para ativar o link de filtro atual e desativar os demais
 function activateFilterLink(link) {
     const filterLinks = document.querySelectorAll(".filtro01 a");
     filterLinks.forEach((filterLink) => {
@@ -112,4 +114,5 @@ function activateFilterLink(link) {
     link.classList.add("active");
   }
 
-export default cardTarot;
+  export { createCardElement, displayCards };
+

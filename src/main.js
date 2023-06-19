@@ -1,9 +1,9 @@
 import cardData from "./tarot.js";
-import dataTarot from "./data.js";
+//import dataTarot from "./data.js";
+import { createCardElement, displayCards } from "./data.js";
 
 // Selecionar o container onde os cards serão exibidos
 const container = document.querySelector("#cardContainer");
-const titleElement = document.querySelector("#filterTitle");
 
 // Selecionar os links de filtro
 const linkBigger = document.querySelector(".bigger");
@@ -42,51 +42,6 @@ function flipCard(card) {
     });
   }
 }
-
-// Função para criar um elemento de card com base nos dados fornecidos
-function createCardElement(data) {
-  const card = document.createElement("div");
-  card.classList.add(
-    "card",
-    "card-item",
-    "clickable-card",
-    data.type,
-    data.suit
-  );
-
-  const frontElement = document.createElement("div");
-  frontElement.classList.add("card-front");
-
-  const imageElement = document.createElement("img");
-  imageElement.src = data.img;
-  imageElement.classList.add("card-image");
-
-  frontElement.appendChild(imageElement);
-  card.appendChild(frontElement);
-
-  const backElement = document.createElement("div");
-  backElement.classList.add("card-back");
-
-  const nameElement = document.createElement("h2");
-  nameElement.textContent = data.name;
-  nameElement.classList.add("hidden");
-
-  const meaningElement = document.createElement("p");
-  meaningElement.textContent = data.meaning_up;
-  meaningElement.classList.add("hidden");
-
-  backElement.appendChild(nameElement);
-  backElement.appendChild(meaningElement);
-  card.appendChild(backElement);
-
-  // flip
-  card.addEventListener("click", function () {
-    flipCard(card);
-  });
-
-  return card;
-}
-
 
 
 
@@ -170,4 +125,3 @@ if (filterSuit) {
 // Exibe os cards com base nos filtros
 displayCards(filters);
 
-console.log(dataTarot);
