@@ -103,3 +103,35 @@ if (filterSuit) {
 // Exibe os cards com base nos filtros
 displayCards(filters);
 
+//Função para ordenar as cartas por nome
+function sortCardsByName(cards, sortOrder) {
+  cards.sort((a, b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+    if (sortOrder === 'name-asc') {
+      return nameA.localeCompare(nameB);
+    } else if (sortOrder === 'name-desc') {
+      return nameB.localeCompare(nameA);
+    } else {
+      return 0;
+    }
+  });
+    // Aplica a ordenação se o parâmetro de ordenação estiver presente
+  if (sortParam) {
+    sortCardsByName(cardData, sortParam);
+  }
+
+  // Limpa o container antes de adicionar os cards
+  container.innerHTML = '';
+
+  // Cria os cards ordenados e adiciona-os ao container
+  sortCardsByName(cardData, sortParam);
+  for (let i = 0; i < cardData.length; i++) {
+    const card = createCardElement(cardData[i]);
+    container.appendChild(card);
+  }
+}
+ 
+
+
+

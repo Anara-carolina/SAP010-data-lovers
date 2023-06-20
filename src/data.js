@@ -2,6 +2,7 @@
 export default cardTarot;*/
 const container = document.querySelector("#cardContainer");
 const titleElement = document.querySelector("#filterTitle");
+
 function createCardElement(data) {
     const card = document.createElement("div");
     card.classList.add(
@@ -62,7 +63,7 @@ function createCardElement(data) {
         });
         }
     }
-  }
+}
   
 // Função para criar um elemento de card com base nos dados fornecidos
 function displayCards(filters) {
@@ -133,5 +134,7 @@ function activateFilterLink(link) {
     link.classList.add("active");
   }
 
-  export { createCardElement, displayCards,activateFilterLink};
+// Função para ordenar as cartas por nome
+
+export { createCardElement, displayCards,activateFilterLink};
 
