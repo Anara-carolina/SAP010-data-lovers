@@ -13,15 +13,16 @@ body {
   background-position: center center;
   height: 100vh;
   background-attachment: fixed;
-}
-/*filtro lateral e barra de pesguisa*/
-.searc {
-  width: 100%;
-  background-color: black;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main {
+  width: 100vw;
+  height: 90vh;
+  
+  
 }
 
 input {
@@ -33,22 +34,15 @@ input {
   border: 1px solid #d1cccc;
   margin: 15px;
   position: fixed;
-  margin-top: 0%;
 }
-
-
 
 .menu {
   width: 70px;
   border-radius: 50px;
-  position:fixed ;
+  position: fixed;
   z-index: 1;
   display: flex;
   padding: 15px;
-  margin-top: 80px;
-
-
-
 }
 
 .chec {
@@ -61,15 +55,13 @@ input {
   height: 100%;
   left: -250px;
   position: fixed;
-  transition: all .5s;
+  transition: all 0.5s;
   margin-top: 70px;
 }
 
 .chec[type="checkbox"]:checked + .imgmenu + .filtro01 {
   transform: translateX(250px);
 }
-
-
 
 .lista .bigger,
 .lista .minors,
@@ -104,8 +96,6 @@ input {
   color: black;
 }
 
-
-
 .lista {
   margin-top: 70px;
   padding: 20px 5px;
@@ -122,240 +112,326 @@ input {
   border-radius: 50px;
 }
 
+/*introdução*/
+.content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: stretch;
+  height: 80vh;
+  width: 80vw;
+  float: right;
+  /*width: calc(100% - 350px);*/
+  padding: 20px;
+}
 
-
-
-/*introdução*/ 
-  .content {
-    float:right;
-    width: calc(100% - 350px);
-    padding: 20px;
-  }
-  
- 
- 
-  
-  .content h1 {
-    margin-top: 0;
-    font-size: 50px; 
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
-  }
-  
-  .content p {
-    font-size: 20px; 
-    color: white;
-    text-shadow: 2px 2px 4px rgba(243, 219, 2, 0.5); /* Adiciona uma sombra */
-  }
-
-  .imgcartas{
-    position: relative;
-    float: right;
-    margin-right: 20px; /* Define a margem esquerda para criar espaço entre a imagem e o conteúdo */
-    filter: grayscale(60%) sepia(40%) brightness(80%) contrast(120%);
-  }
- 
-
-    
-   
-    /*cards*/
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 50px;
-      margin-left: 250px;
-    }
-    
-    .card {
-      width: calc(50% - 40px);
-      cursor: pointer;
-      border-radius: 25px;
-      padding: 5px;
-      height:328px;
-      justify-content: center;
-      border: 1px solid gray;
-      padding: 10px;
-      margin: 20px;
-      background-color: black;
-      
-    }
-    
-   
-    
-    
-    
-    .card-item {
-      flex-basis: 15%; /* Ajustar a largura dos cards na versão mobile */
-    }
-    
-  
-    
-    .card-image {
-      width: 100%; /* Define a largura da imagem como 100% */
-      height: 100%; /* Define a altura da imagem como 100% */
-      border-radius: 25px;
-      justify-content: center;
-
-    }
-    .clickable-card {
-      transition: transform 0.5s ease; /* Adiciona uma transição suave para a transformação */
-    }
-    
-    /* Estilo para os cards quando virados */
-    .clickable-card.flipped {
-      transform: rotateY(180deg);
-    }
-    
-    
-    
-   
-    .card-front {
-      position: relative;
-    }
-    
-  
-    .hidden {
-      display: none;
-    }
-  
-
-  
-  .clickable-card {
-    transition: transform 0.5s ease; /* Adiciona uma transição suave para a transformação */
-  }
-  
-  /* Estilo para os cards quando virados */
-  .clickable-card.flipped {
-    transform: rotateY(180deg);
-  }
-  
-  
-  .card-back {
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    transform: scaleX(-1);
-    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
-    height: 325px; /* Define uma altura fixa para exibir a barra de rolagem */
-    max-height: 100%;
-
-  }
-
-  
-  .card-back h2,
-  .card-back p {
-  color:white;
+.content h1 {
+  margin-top: 0;
+  font-size: 50px;
+  color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
 }
 
-  .card-front {
-    position: relative;
-  }
-  /*titulo*/
-  
-  
-  .titulo{
-    color: #FFFFFF;
-    margin-top: 100px;
-   align-items: center;
-   display: flex;
-   margin-left: 600px;
-   text-decoration: none;
-   font-size: 30px;   
-  }
+.content p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(243, 219, 2, 0.5); /* Adiciona uma sombra */
+}
 
- 
-  /*foother*/
+.imgcartas {
+  position: relative;
+  float: right;
+  margin-right: 20px; /* Define a margem esquerda para criar espaço entre a imagem e o conteúdo */
+  filter: grayscale(60%) sepia(40%) brightness(80%) contrast(120%);
+}
+/*cards*/
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 250px;
+}
 
-  .display {
-    position: absolute;
-    width: 100%;
-    height: 259.99px;
-    background: #0E0D0D;
-    mix-blend-mode: saturation;
-    display: flex;
-    
-  }
-  
-  .displaytext {
-    position: relative;
-    text-align: center;
-    color: #FFFFFF;
-  }
-  
-  .displaytext h2 {
-    margin-bottom: 10px; /* Ajuste a margem inferior conforme necessário */
-  }
-  
-  .displaytext h3 {
-    margin-bottom: 5px; /* Ajuste a margem inferior conforme necessário */
-  }
-  
+.card {
+  width: calc(50% - 40px);
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 5px;
+  height: 328px;
+  justify-content: center;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 20px;
+  background-color: black;
+}
 
-  /*rodape*/
-  .container{
-    display: flex;
- }
+.card-item {
+  flex-basis: 15%; /* Ajustar a largura dos cards na versão mobile */
+}
 
- .div-anara{
-  margin-left: 14px;
- }
- .div-dara{
+.card-image {
+  width: 100%; /* Define a largura da imagem como 100% */
+  height: 100%; /* Define a altura da imagem como 100% */
+  border-radius: 25px;
+  justify-content: center;
+}
+.clickable-card {
+  transition: transform 0.5s ease; /* Adiciona uma transição suave para a transformação */
+}
+
+/* Estilo para os cards quando virados */
+.clickable-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.clickable-card {
+  transition: transform 0.5s ease; /* Adiciona uma transição suave para a transformação */
+}
+
+/* Estilo para os cards quando virados */
+.clickable-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  transform: scaleX(-1);
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+  height: 325px; /* Define uma altura fixa para exibir a barra de rolagem */
+ max-height: 100%;
+}
+
+.card-back h2,
+.card-back p {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+}
+
+.card-front {
+  position: relative;
+}
+
+.titulo {
+  color: #ffffff;
+  margin-top: 100px;
+  align-items: center;
+  display: flex;
   margin-left: 600px;
+  text-decoration: none;
+  font-size: 30px;
+}
 
- }
+/*foother*/
+.display {
+  position: absolute;
+  width: 100%;
+  height: 259.99px;
+  background: #0e0d0d;
+  mix-blend-mode: saturation;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centralizar horizontalmente */
+  z-index: 1;
+}
 
+.displaytext {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
 
-  .bruxa{
-    border-radius:40px;
-    width: 100px; /* Defina a largura desejada para o elemento */
-   height: 150px; /* Defina a altura desejada para o elemento */
-   margin-left: 40px;
-   
+.displaytext h2 {
+  margin-bottom: 10px; /* Ajuste a margem inferior conforme necessário */
+}
+
+.displaytext h3 {
+  margin-bottom: 5px; /* Ajuste a margem inferior conforme necessário */
+}
+
+.img {
+  background-image: url("/SAP010-data-lovers/src/tarotimag/cartas.png");
+  background-repeat: none;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+
+.text {
+  width: 40vw;
+}
+
+@media screen and (max-width: 1350px) {
+  .text {
+    width: 50vw;
+  }
+}
+
+/*@media screen and (max-width: 1310px) {
+  .text h1 {
+    font-size: 5vh;
+  }
+  .text p {
+    font-size: 2.5vh;
+  }
+}*/
+@media screen and (max-width: 1030px) {
+  .img{
+    height: 80%;
   }
 
-  .anara {
-    margin-left: 200px;
-    color: #FFFFFF;
-    margin-top: -130px; 
-    font-size: 25px;
+  .text {
+    width: 40vw;
   }
-.imgit{
-    width: 80px;
-    height:80px;
-    margin-left: 180px;
+}
+
+@media screen and (max-width: 860px) {
+  .img{
+    height: 70%;
+  }
+
+  .text h1 {
+    font-size: 4vh;
+  }
+
+  .text p {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .img{
+    height: 60%;
+  }
+
+  .text h1 {
+    font-size: 4vh;
   }
   
-  .imglinkedin{
-    width:80px;
-    height:80px;
+  .text p {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body{
+    height: 100%;
   }
 
-  .dara {
-    margin-left:120px;
-    color: #FFFFFF;
-    margin-top: -130px; 
-    font-size: 25px;
-  }
-  .bruxa1{
-    border-radius:40px;
-    width: 100px; /* Defina a largura desejada para o elemento */
-   height: 150px; /* Defina a altura desejada para o elemento */
-   margin-right: 10%;
-  }
-.imgit1{
-    width: 80px;
-    height:80px;
-    margin-left: 120px;
-
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150%;
   }
   
-  .imglinkedin1{
-    width:80px;
-    height:80px;
+  .content{
+    flex-direction: column-reverse;
+    /*justify-content: center;*/
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
+
+  .text{
+    width: 80vw;
+    height: 35%;
+  }
+
+  .img{
+    height: 40%;
+  }
+
+  #pesquisa{
+    width: 50vw;
+    left: 6%;
+  }
+
+  .menu{
+    width: 50px;
+    top: 0;
+    right: 6%;
+    margin-top: 0;
+  }
+  
+  .filtro01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    background-color: black;
+  }
+
+  .filtro01 ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    margin-top: 0;
+  }
+
+  .filtro01 li{
+    width: 100%;
+  } 
+
+  .filtro01 a{
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .img{
+    display: none;
+  }
+  
+  main{
+    height: 100%;
+  }
+
+  .card-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-front img{
+    width: 200px;
+  }
+
+}
+
+footer{
+  position:static;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+}
+
+.content{
+  height: 90%;
+}
+.cards_pages{
+  height: 100%;
+  top: 0;
+  position: absolute;
+  overflow-y: scroll;
+  width: 100%;
+}
