@@ -1,6 +1,29 @@
 import {displayCards} from "../src/data.js";
 
-// Importe as bibliotecas necessárias
+
+describe('sum function', () => {
+  it('should correctly add two numbers', () => {
+    // Arrange
+    const a = 2;
+    const b = 3;
+
+    // Act
+    const result = sum(a, b);
+
+    // Assert
+    expect(result).toBe(5);
+  });
+});
+
+
+
+
+
+
+
+
+
+/* Importe as bibliotecas necessárias
 const { assert } = require('chai');
 
 // Descreva o teste para a função displayCards
