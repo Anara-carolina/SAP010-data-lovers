@@ -1,7 +1,6 @@
 /*const cardTarot =[]
 export default cardTarot;*/
-const container = document.querySelector("#cardContainer");
-const titleElement = document.querySelector("#filterTitle");
+
 
 function createCardElement(data) {
     const card = document.createElement("div");
@@ -85,45 +84,8 @@ function displayCards(filters) {
       } else {
         card.classList.add("hidden");
       }
-    });
-  
-    // Atualize o título de acordo com o filtro selecionado
-    if (filters.length === 1) {
-      const filterName = filters[0];
-      let filterTitle = "";
-  
-      switch (filterName) {
-        case "maior":
-          filterTitle = "Arcanos Maiores";
-          break;
-        case "menor":
-          filterTitle = "Arcanos Menores";
-          break;
-        case "all":
-          filterTitle = "Todas as Cartas";
-          break;
-        case "copas":
-          filterTitle = "Baralho de Copas";
-          break;
-        case "ouros":
-          filterTitle = "Baralho de Ouros";
-          break;
-        case "paus":
-          filterTitle = "Baralho de Paus";
-          break;
-        case "espadas":
-          filterTitle = "Baralho de Espadas";
-          break;
-        default:
-          filterTitle = "";
-          break;
-      }
-  
-      titleElement.textContent = filterTitle;
-    } else {
-      titleElement.textContent = "";
-    }
-  }
+  });
+}
 // Função para ativar o link de filtro atual e desativar os demais
 function activateFilterLink(link) {
     const filterLinks = document.querySelectorAll(".filtro01 a");
