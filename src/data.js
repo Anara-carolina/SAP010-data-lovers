@@ -1,3 +1,6 @@
+/*const cardTarot =[]
+export default cardTarot;*/
+
 
 function createCardElement(data) {
   const card = document.createElement("div");
@@ -8,7 +11,6 @@ function createCardElement(data) {
     data.type,
     data.suit
   );
-  
 
   const frontElement = document.createElement("div");
   frontElement.classList.add("card-front");
@@ -94,5 +96,18 @@ function activateFilterLink(link) {
   link.classList.add("active");
 }
 
-
-export { createCardElement, displayCards,activateFilterLink};
+// Função para ordenar as cartas por nome
+function sortCardsByName(cards, sortOrder) {
+cards.sort((a, b) => {
+  const nameA = a.name.toUpperCase();
+  const nameB = b.name.toUpperCase();
+  if (sortOrder === "name-asc") {
+    return nameA.localeCompare(nameB);
+  } else if (sortOrder === "name-desc") {
+    return nameB.localeCompare(nameA);
+  } else {
+    return 0;
+  }
+});
+}
+export { createCardElement, displayCards,activateFilterLink, sortCardsByName};

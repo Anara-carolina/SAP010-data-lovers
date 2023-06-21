@@ -1,5 +1,5 @@
 import cardData from "./tarot.js";
-import { createCardElement, displayCards, activateFilterLink } from "./data.js";
+import { createCardElement, displayCards, activateFilterLink, sortCardsByName } from "./data.js";
 
 const container = document.querySelector("#cardContainer");
 const titleElement = document.querySelector("#filterTitle");
@@ -17,7 +17,7 @@ const filterType = urlParams.get("type");
 const filterSuit = urlParams.get("suit");
 const sortParam = urlParams.get("sort");
 
-const totalCards = cardData.length;
+
 
 // Aplica a ordenação se o parâmetro de ordenação estiver presente
 sortCardsByName(cardData, sortParam);
@@ -30,7 +30,7 @@ for (let i = 0; i < cardData.length; i++) {
   const card = createCardElement(cardData[i]);
   container.appendChild(card);
 }
-
+const totalCards = cardData.length;
 // Event listener para o link "Arcanos Maiores"
 linkBigger.addEventListener("click", function () {
   if (currentFilter !== "maior") {
@@ -41,7 +41,7 @@ linkBigger.addEventListener("click", function () {
     const filteredCards = document.querySelectorAll(".card");
     const numFilteredCards = filteredCards.length;
     const percentageFiltered = (numFilteredCards / totalCards) * 100;
-    console.log(t)
+    
   }
 });
 
@@ -53,6 +53,7 @@ linkMinors.addEventListener("click", function () {
     displayCards(["menor"]); // Exibe apenas os arcanos menores
   }
 });
+
 
 // Event listener para o link "Todas as Cartas"
 linkCardall.addEventListener("click", function () {
@@ -71,6 +72,7 @@ linkCopas.addEventListener("click", function () {
     displayCards(["copas"]); // Exibe apenas as cartas de copas
   }
 });
+
 
 // Event listener para o link "Ouros"
 linkOuros.addEventListener("click", function () {
@@ -123,20 +125,7 @@ if (filterSuit) {
 }
 
 
-// Função para ordenar as cartas por nome
-function sortCardsByName(cards, sortOrder) {
-  cards.sort((a, b) => {
-    const nameA = a.name.toUpperCase();
-    const nameB = b.name.toUpperCase();
-    if (sortOrder === "name-asc") {
-      return nameA.localeCompare(nameB);
-    } else if (sortOrder === "name-desc") {
-      return nameB.localeCompare(nameA);
-    } else {
-      return 0;
-    }
-  });
-}
+
 // Atualize o título de acordo com o filtro selecionado
 if (filters.length === 1) {
   const filterName = filters[0];
