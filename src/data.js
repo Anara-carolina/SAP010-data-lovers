@@ -133,8 +133,7 @@ function activateFilterLink(link) {
   
     link.classList.add("active");
   }
+  
 
-// Função para ordenar as cartas por nome
-
-export { createCardElement, displayCards,activateFilterLink};
+  export { createCardElement, displayCards,activateFilterLink};
 

@@ -1,26 +1,40 @@
-import { filtrarCartas} from "../src/data.js";
+import {displayCards} from "../src/data.js";
 
-describe("Teste da função de filtro de cartas", () => {
-  it("Deve filtrar corretamente as cartas com base no filtro", () => {
-    // Crie um array de cartas de exemplo
-    const cartas = [
-      { nome: "Carta 1", tipo: "Maior" },
-      { nome: "Carta 2", tipo: "Menor" },
-      { nome: "Carta 3", tipo: "Maior" },
-      // Adicione mais cartas de exemplo conforme necessário
-    ];
+// Importe as bibliotecas necessárias
+const { assert } = require('chai');
 
-    // Defina o filtro que você deseja testar
-    const filtro = "Maior";
+// Descreva o teste para a função displayCards
+describe('Teste da função displayCards', () => {
+  it('Deve exibir corretamente os cartões com base nos filtros', () => {
+    // Crie um elemento container simulado para o teste
+    const container = document.createElement('div');
 
-    // Chame a função de filtro
-    const cartasFiltradas = filtrarCartas(cartas, filtro);
+    // Adicione alguns cartões simulados ao container
+    const card1 = document.createElement('div');
+    card1.classList.add('card', 'maior');
+    container.appendChild(card1);
 
-    // Verifique se o resultado está de acordo com o esperado
-    // Por exemplo, verifique se apenas as cartas do tipo "Maior" estão presentes no array filtrado
-    assert.equal(cartasFiltradas.length, 2);
-    cartasFiltradas.forEach((carta) => {
-      assert.equal(carta.tipo, "Maior");
-    });
+    const card2 = document.createElement('div');
+    card2.classList.add('card', 'menor');
+    container.appendChild(card2);
+
+    const card3 = document.createElement('div');
+    card3.classList.add('card', 'copas');
+    container.appendChild(card3);
+
+    // Defina os filtros que você deseja testar
+    const filters = ['maior', 'copas'];
+
+    // Chame a função displayCards passando os filtros
+    displayCards(filters);
+
+    // Verifique se os cartões estão sendo exibidos ou ocultados corretamente
+    assert.isFalse(card1.classList.contains('hidden'), 'O cartão 1 deve ser exibido');
+    assert.isTrue(card2.classList.contains('hidden'), 'O cartão 2 deve ser ocultado');
+    assert.isFalse(card3.classList.contains('hidden'), 'O cartão 3 deve ser exibido');
+
+    // Verifique se o título está sendo atualizado corretamente com base no filtro selecionado
+    assert.equal(titleElement.textContent, 'Arcanos Maiores', 'O título deve ser "Arcanos Maiores"');
   });
 });
+
