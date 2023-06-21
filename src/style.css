@@ -24,7 +24,7 @@ main {
   
   
 }
-
+/*incluir respons*/
 input {
   width: 14%;
   height: 40px;
@@ -34,8 +34,20 @@ input {
   border: 1px solid #d1cccc;
   margin: 15px;
   position: fixed;
+  right: 30px;
+  top: 20px;
 }
 
+.search {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*filtro link*/
 .menu {
   width: 70px;
   border-radius: 50px;
