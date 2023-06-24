@@ -29,18 +29,22 @@ if (filterSuit) {
   filters.push(filterSuit);
 }
 
+//erro 
+sortCardsByName(cardData, sortParam);
+displayCards(filters, sortParam);//bugado 
+
+container.innerHTML = "";
+
+
 // Criar os cards e adicioná-los ao container
 for (let i = 0; i < cardData.length; i++) {
   const card = createCardElement(cardData[i]);
   container.appendChild(card);
 }
 
-// Aplica a ordenação se o parâmetro de ordenação estiver presente
-if (sortParam) {
-  sortCardsByName(container.children, sortParam);
-}
 
-displayCards(filters, sortParam);
+
+
 
 // Função para virar o card ao ser clicado
 function flipCard(card) {

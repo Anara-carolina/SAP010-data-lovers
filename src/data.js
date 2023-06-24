@@ -1,7 +1,5 @@
 const container = document.querySelector('#cardContainer');
-
-// Função para exibir os cards com base nos filtros selecionados
-function displayCards(filters, sortOrder) {
+function displayCards(filters) {
   const cardElements = container.querySelectorAll('.card');
   cardElements.forEach((card) => {
     let shouldDisplay = false;
@@ -17,19 +15,13 @@ function displayCards(filters, sortOrder) {
       card.classList.add('hidden');
     }
   });
-
-  // Ordena os cards pelo nome, se o sortOrder estiver presente
-  if (sortOrder) {
-    sortCardsByName(container.children, sortOrder);
-  }
 }
 
+// Função para ordenar as cartas por nome
 function sortCardsByName(cards, sortOrder) {
-  const sortedCards = Array.from(cards);
-
-  sortedCards.sort((a, b) => {
-    const nameA = a.dataset.name.toUpperCase();
-    const nameB = b.dataset.name.toUpperCase();
+  cards.sort((a, b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
     if (sortOrder === 'name-asc') {
       return nameA.localeCompare(nameB);
     } else if (sortOrder === 'name-desc') {
@@ -38,9 +30,6 @@ function sortCardsByName(cards, sortOrder) {
       return 0;
     }
   });
-
-  sortedCards.forEach((card) => {
-    container.appendChild(card);
-  });
 }
+
 export { container, displayCards, sortCardsByName };
