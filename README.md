@@ -52,7 +52,55 @@ HTML semântico: Utilizamos HTML semântico para estruturar e marcar corretament
 
 CSS: Utilizamos CSS para estilizar a página, aplicando layouts, cores, fontes e efeitos visuais. O uso adequado de CSS contribui para uma experiência visual agradável e coerente, tornando a plataforma atraente e fácil de usar para os usuários.
 
-## 9. Checklist
+## 6.Protótipo de baixa fidelidade.  
+
+Para criar o protótipo de baixa fidelidade, utilizamos duas abordagens diferentes:
+
+Desenho à mão com caneta e papel: Inicialmente, começamos esboçando o layout e a disposição dos elementos da página em um papel. Usamos caneta para criar uma representação visual básica das seções, botões, menus e conteúdos principais. Essa abordagem permite uma rápida iteração e exploração de diferentes ideias.
+
+Ferramenta Paint: Em seguida, transferimos o esboço do papel para a ferramenta Paint em um computador. Utilizamos ferramentas básicas de desenho, como formas geométricas e pincéis, para criar uma versão digital do protótipo. Embora simples, essa abordagem nos permitiu visualizar melhor o layout e a estrutura da página.
+
+O protótipo de baixa fidelidade é uma representação simplificada e não interativa do design, que nos ajuda a ter uma ideia inicial de como os elementos serão dispostos na página. Ele serve como ponto de partida para testes de usabilidade e discussões de design antes de passarmos para protótipos mais detalhados e interativos.
+
+## 7.Protótipo de alta fidelidade. 
+Para criar o protótipo de alta fidelidade, utilizamos a ferramenta Figma, que é uma plataforma de design colaborativo. Com o Figma, pudemos criar um protótipo  visualmente mais refinado, que representa de forma precisa a aparência e o comportamento da interface.
+![figma](src/readme/Introdu%C3%A7%C3%A3o%20.png)
+__
+![figma](src/readme/maiorf.png)
+__
+![figma](src/readme/maiores.png)
+__
+![figma](src/readme/nome.png)
+__
+![figma](src/readme/nomev.png)
+
+## 8. Testes.
+
+Realizamos a implementação de testes unitários abrangentes para as funções responsáveis por processar, filtrar, ordenar os dados e calcular estatísticas. Nossos testes foram projetados para garantir o correto funcionamento de cada funcionalidade.
+
+Obtivemos uma cobertura total de 100% em relação a statements (sentenças), functions (funções), lines (linhas) e branches (ramos) do arquivo src/data.js. Essa abordagem minuciosa de testes nos permitiu identificar e corrigir possíveis erros, bem como validar a precisão e integridade dos resultados obtidos.
+
+Através dos testes unitários, garantimos a confiabilidade do código e a consistência das funcionalidades implementadas. Além disso, a cobertura completa dos testes nos possibilita realizar alterações e melhorias no código com segurança, assegurando que a base de código se mantenha sólida.
+
+Continuaremos a investir em testes para manter a qualidade do projeto e garantir um alto nível de confiabilidade em todas as suas funcionalidades.
+
+## 9. Equipe. 
+
+Cada membro da equipe desempenhou um papel fundamental no desenvolvimento do projeto, contribuindo com suas habilidades técnicas e experiência para o sucesso do mesmo. Juntos, colaboramos de forma eficiente e aproveitamos nossos conhecimentos individuais para entregar um produto de qualidade.
+
+<h3>Anara Martins</h3>
+
+LinkedIn: Perfil do LinkedIn
+GitHub: GitHub
+
+<h3>Dara Nunes</h3>
+
+LinkedIn: Perfil do LinkedIn
+GitHub: GitHub
+
+
+
+## 10. Checklist
 
 * [x ] Usar VanillaJS.
 * [ ] Passa pelo linter (`npm run pretest`)
