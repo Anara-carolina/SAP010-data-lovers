@@ -1,7 +1,9 @@
 /*const cardTarot =[]
 export default cardTarot;*/
 
+import cardData from "./tarot";
 
+const container = document.querySelector("#cardContainer");
 function createCardElement(data) {
     const card = document.createElement("div");
     card.classList.add(
@@ -94,8 +96,10 @@ function activateFilterLink(link) {
     });
   
     link.classList.add("active");
+
   }
-  
+
+
 // Função para ordenar as cartas por nome
 function sortCardsByName(cards, sortOrder) {
   cards.sort((a, b) => {
@@ -110,5 +114,7 @@ function sortCardsByName(cards, sortOrder) {
     }
   });
 }
-  export { createCardElement, displayCards,activateFilterLink, sortCardsByName};
+
+
+export { createCardElement, displayCards,activateFilterLink, sortCardsByName};
 

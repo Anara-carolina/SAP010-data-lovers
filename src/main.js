@@ -1,5 +1,10 @@
 import cardData from "./tarot.js";
-import { createCardElement, displayCards, activateFilterLink, sortCardsByName } from "./data.js";
+import {
+  createCardElement,
+  displayCards,
+  activateFilterLink,
+  sortCardsByName,
+} from "./data.js";
 
 const container = document.querySelector("#cardContainer");
 const titleElement = document.querySelector("#filterTitle");
@@ -11,37 +16,73 @@ const linkOuros = document.querySelector(".ouros");
 const linkPaus = document.querySelector(".paus");
 const linkEspadas = document.querySelector(".espadas");
 
-
 const urlParams = new URLSearchParams(window.location.search);
 const filterType = urlParams.get("type");
 const filterSuit = urlParams.get("suit");
 const sortParam = urlParams.get("sort");
-
-
-
-// Aplica a ordenação se o parâmetro de ordenação estiver presente
-sortCardsByName(cardData, sortParam);
+let currentFilter = "";
 
 // Limpa o container antes de adicionar os cards
 container.innerHTML = "";
-
 // Cria os cards ordenados e adiciona-os ao container
 for (let i = 0; i < cardData.length; i++) {
   const card = createCardElement(cardData[i]);
   container.appendChild(card);
 }
-const totalCards = cardData.length;
+
+console.log(currentFilter);
+
+// Exibe os cards com base nos filtros
+const filters = [];
+if (filterType) {
+  filters.push(filterType);
+}
+if (filterSuit) {
+  filters.push(filterSuit);
+}
+
+// Atualize o título de acordo com o filtro selecionado
+if (filters.length === 1) {
+  const filterName = filters[0];
+  let filterTitle = "";
+
+  switch (filterName) {
+    case "maior":
+      filterTitle = "Arcanos Maiores";
+      break;
+    case "menor":
+      filterTitle = "Arcanos Menores";
+      break;
+    case "all":
+      filterTitle = "Todas as Cartas";
+      break;
+    case "copas":
+      filterTitle = "Baralho de Copas";
+      break;
+    case "ouros":
+      filterTitle = "Baralho de Ouros";
+      break;
+    case "paus":
+      filterTitle = "Baralho de Paus";
+      break;
+    case "espadas":
+      filterTitle = "Baralho de Espadas";
+      break;
+    default:
+      filterTitle = "";
+      break;
+  }
+  titleElement.textContent = filterTitle;
+} else {
+  titleElement.textContent = "";
+}
+
 // Event listener para o link "Arcanos Maiores"
 linkBigger.addEventListener("click", function () {
   if (currentFilter !== "maior") {
     currentFilter = "maior";
     activateFilterLink(linkBigger);
     displayCards(["maior"]); // Exibe apenas os arcanos maiores
-
-    const filteredCards = document.querySelectorAll(".card");
-    const numFilteredCards = filteredCards.length;
-    const percentageFiltered = (numFilteredCards / totalCards) * 100;
-    
   }
 });
 
@@ -53,7 +94,6 @@ linkMinors.addEventListener("click", function () {
     displayCards(["menor"]); // Exibe apenas os arcanos menores
   }
 });
-
 
 // Event listener para o link "Todas as Cartas"
 linkCardall.addEventListener("click", function () {
@@ -72,7 +112,6 @@ linkCopas.addEventListener("click", function () {
     displayCards(["copas"]); // Exibe apenas as cartas de copas
   }
 });
-
 
 // Event listener para o link "Ouros"
 linkOuros.addEventListener("click", function () {
@@ -115,50 +154,28 @@ filterLinks.forEach((filterLink) => {
   });
 });
 
-// Exibe os cards com base nos filtros
-const filters = [];
-if (filterType) {
-  filters.push(filterType);
-}
-if (filterSuit) {
-  filters.push(filterSuit);
-}
-
-
-
-// Atualize o título de acordo com o filtro selecionado
-if (filters.length === 1) {
-  const filterName = filters[0];
-  let filterTitle = "";
-
-  switch (filterName) {
-    case "maior":
-      filterTitle = "Arcanos Maiores";
-      break;
-    case "menor":
-      filterTitle = "Arcanos Menores";
-      break;
-    case "all":
-      filterTitle = "Todas as Cartas";
-      break;
-    case "copas":
-      filterTitle = "Baralho de Copas";
-      break;
-    case "ouros":
-      filterTitle = "Baralho de Ouros";
-      break;
-    case "paus":
-      filterTitle = "Baralho de Paus";
-      break;
-    case "espadas":
-      filterTitle = "Baralho de Espadas";
-      break;
-    default:
-      filterTitle = "";
-      break;
+function deepCopy(obj) {
+  if (typeof obj !== "object" || obj === null) {
+    // Se não for um objeto, retornar o valor original
+    return obj;
   }
-  titleElement.textContent = filterTitle;
-} 
-else {
-  titleElement.textContent = "";
+  // Verificar se é um array ou objeto
+  const copy = Array.isArray(obj) ? [] : {};
+  // Fazer uma cópia de cada propriedade ou elemento aninhado
+  for (const key in obj) {
+    if (Object.hasOwnProperty.call(obj, key)) {
+      copy[key] = deepCopy(obj[key]);
+    }
+  }
+
+  return copy;
 }
+
+copyList = deepCopy(cardData);
+console.log(cardData);
+console.log(copyList);
+
+displayCards(filters);
+
+// Aplica a ordenação se o parâmetro de ordenação estiver presente
+sortCardsByName(copyList, sortParam);
