@@ -19,6 +19,7 @@ const sortParam = urlParams.get('sort');
 
 // Variável para armazenar o tipo de filtro selecionado
 let currentFilter = '';
+
 //imput por nome 
 const cardSearchInput = document.querySelector('#cardSearchInput');
 cardSearchInput.addEventListener('input', function () {
@@ -70,7 +71,7 @@ if (filterSuit) {
 container.innerHTML = '';
 
 // Aplica a ordenação se o parâmetro de ordenação estiver presente
-if (sortParam) {
+if (sortParam) {//bugado
   sortCardsByName(cardData, sortParam);
 }
 
@@ -79,10 +80,10 @@ for (let i = 0; i < cardData.length; i++) {
   const card = createCardElement(cardData[i]);
   container.appendChild(card);
 }
-
+s
 
 // Exibe os cards com base nos filtros
-displayCards(filters);
+displayCards(filters);// bugado
 
 
 
@@ -217,3 +218,4 @@ linkEspadas.addEventListener('click', function () {
     displayCards(filters); // Exibe apenas as cartas de espadas
   }
 });
+
