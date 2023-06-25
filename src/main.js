@@ -19,6 +19,41 @@ const sortParam = urlParams.get('sort');
 
 // Variável para armazenar o tipo de filtro selecionado
 let currentFilter = '';
+//imput por nome 
+const cardSearchInput = document.querySelector('#cardSearchInput');
+cardSearchInput.addEventListener('input', function () {
+  const cardName = cardSearchInput.value;
+  displayCardByName(cardName);
+});
+
+function displayCardByName(cardName) {
+  const trimmedCardName = cardName.trim(); // Remove espaços em branco antes e depois do texto
+
+  if (trimmedCardName === '') {
+    titleElement.textContent = ''; // Limpa o título do filtro
+    container.innerHTML = ''; // Limpa o container
+    sortCardsByName(cardData, sortParam); // Ordena as cartas novamente
+    for (let i = 0; i < cardData.length; i++) {
+      const card = createCardElement(cardData[i]);
+      container.appendChild(card);
+    }
+    return; // Sai da função para evitar a filtragem desnecessária
+  }
+
+  const filteredCards = cardData.filter((card) => card.name.toLowerCase().startsWith(trimmedCardName.toLowerCase()));
+
+  if (filteredCards.length > 0) {
+    container.innerHTML = '';
+
+    filteredCards.forEach((card) => {
+      const cardElement = createCardElement(card);
+      container.appendChild(cardElement);
+    });
+  } else {
+    container.innerHTML = 'Nenhuma carta encontrada.';
+  }
+}
+
 
 // Cria uma lista de filtros com base nos parâmetros da URL
 const filters = [];
@@ -29,12 +64,15 @@ if (filterSuit) {
   filters.push(filterSuit);
 }
 
-//erro 
-sortCardsByName(cardData, sortParam);
-displayCards(filters, sortParam);//bugado 
 
-container.innerHTML = "";
 
+// Limpa o container antes de adicionar os cards
+container.innerHTML = '';
+
+// Aplica a ordenação se o parâmetro de ordenação estiver presente
+if (sortParam) {
+  sortCardsByName(cardData, sortParam);
+}
 
 // Criar os cards e adicioná-los ao container
 for (let i = 0; i < cardData.length; i++) {
@@ -43,6 +81,8 @@ for (let i = 0; i < cardData.length; i++) {
 }
 
 
+// Exibe os cards com base nos filtros
+displayCards(filters);
 
 
 
