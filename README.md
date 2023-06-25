@@ -4,7 +4,7 @@ O tarot é um baralho com 78 cartas, chamadas de arcanos, que são divididos em 
 Os arcanos maiores representam arquétipos da sociedade e do imaginário coletivo, representando partes de nós que não podem ser mudadas, como ideias, forças e possibilidades inatas. Ex.: O Papa, A Roda da Fortuna, A Sacerdotisa. 
 
 Já os arcanos menores aparecem para complementar os arcanos maiores e representam especificações e características que podem ser mudadas dentro de uma situação. Eles são bastante conhecidos por quase todo mundo, já que são muito utilizados para jogos recreativos. Ex.: Dois de Paus, Cinco de Ouros, Rainha de Copas. 
-# Do que se trata o tarô? 
+ <h2>Do que se trata o tarô? </h2>
 O tarot é um oráculo que pode auxiliar o consulente (pessoa que se beneficia da leitura) em sua jornada de autoconhecimento. Existem dois tipos de prática no tarot: a divinatória, que consiste em previsões do futuro e a terapêutica, que proporciona uma análise mais a fundo de situações, sem prever o que vai acontecer. 
 
 O tarot considera sempre que as ações moldam o destino, portanto, o livre arbítrio do consulente sempre é levado em conta. Mesmo na modalidade divinatória, a previsão não se trata de uma sentença. Já na modalidade terapêutica, o tarot auxilia na autocompreensão, no autocuidado e na autorreflexão de aspectos da vida. 
