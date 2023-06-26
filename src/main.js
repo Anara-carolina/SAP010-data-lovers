@@ -1,21 +1,29 @@
 import cardData from "./tarot.js";
-import { container, displayCards, sortCardsByName } from "./data.js";
+import {
+  createCardElement,
+  displayCards,
+  activateFilterLink,
+  sortCardsByName,
+} from "./data.js";
 
-// Selecionar os links de filtro
-const linkBigger = document.querySelector('.bigger');
-const linkMinors = document.querySelector('.minors');
-const linkCardall = document.querySelector('.cardall');
-const linkCopas = document.querySelector('.copas');
-const linkOuros = document.querySelector('.ouros');
-const linkPaus = document.querySelector('.paus');
-const linkEspadas = document.querySelector('.espadas');
+const container = document.querySelector("#cardContainer");
+const titleElement = document.querySelector("#filterTitle");
+const linkBigger = document.querySelector(".bigger");
+const linkMinors = document.querySelector(".minors");
+const linkCardall = document.querySelector(".cardall");
+const linkCopas = document.querySelector(".copas");
+const linkOuros = document.querySelector(".ouros");
+const linkPaus = document.querySelector(".paus");
+const linkEspadas = document.querySelector(".espadas");
 
+const linkOrda = document.querySelector(".orda");
+const linkOrdz = document.querySelector(".ordz");
 
-// Obter os parâmetros de filtro da URL, se houver
 const urlParams = new URLSearchParams(window.location.search);
-const filterType = urlParams.get('type');
-const filterSuit = urlParams.get('suit');
-const sortParam = urlParams.get('sort');
+const filterType = urlParams.get("type");
+const filterSuit = urlParams.get("suit");
+const sortParam = urlParams.get("sort");
+
 
 // Variável para armazenar o tipo de filtro selecionado
 let currentFilter = '';
@@ -56,7 +64,18 @@ function displayCardByName(cardName) {
 }
 
 
-// Cria uma lista de filtros com base nos parâmetros da URL
+
+
+
+// Limpa o container antes de adicionar os cards
+container.innerHTML = "";
+// Cria os cards ordenados e adiciona-os ao container
+for (let i = 0; i < cardData.length; i++) {
+  const card = createCardElement(cardData[i]);
+  container.appendChild(card);
+}
+
+// Exibe os cards com base nos filtros
 const filters = [];
 if (filterType) {
   filters.push(filterType);
@@ -65,157 +84,97 @@ if (filterSuit) {
   filters.push(filterSuit);
 }
 
+// Atualize o título de acordo com o filtro selecionado
+if (filters.length === 1) {
+  const filterName = filters[0];
+  let filterTitle = "";
 
-
-// Limpa o container antes de adicionar os cards
-container.innerHTML = '';
-
-// Aplica a ordenação se o parâmetro de ordenação estiver presente
-if (sortParam) {//bugado
-  sortCardsByName(cardData, sortParam);
-}
-
-// Criar os cards e adicioná-los ao container
-for (let i = 0; i < cardData.length; i++) {
-  const card = createCardElement(cardData[i]);
-  container.appendChild(card);
-}
-s
-
-// Exibe os cards com base nos filtros
-displayCards(filters);// bugado
-
-
-
-// Função para virar o card ao ser clicado
-function flipCard(card) {
-  card.classList.toggle('flipped');
-
-  const imageElement = card.querySelector('.card-image');
-  const textElements = card.querySelectorAll('.card-back h2, .card-back p');
-
-  if (card.classList.contains('flipped')) {
-    imageElement.style.display = 'none';
-    textElements.forEach((element) => {
-      element.classList.remove('hidden');
-    });
-  } else {
-    imageElement.style.display = 'block';
-    textElements.forEach((element) => {
-      element.classList.add('hidden');
-    });
+  switch (filterName) {
+    case "maior":
+      filterTitle = "Arcanos Maiores";
+      break;
+    case "menor":
+      filterTitle = "Arcanos Menores";
+      break;
+    case "all":
+      filterTitle = "Todas as Cartas";
+      break;
+    case "copas":
+      filterTitle = "Baralho de Copas";
+      break;
+    case "ouros":
+      filterTitle = "Baralho de Ouros";
+      break;
+    case "paus":
+      filterTitle = "Baralho de Paus";
+      break;
+    case "espadas":
+      filterTitle = "Baralho de Espadas";
+      break;
+    default:
+      filterTitle = "";
+      break;
   }
+  titleElement.textContent = filterTitle;
+} else {
+  titleElement.textContent = "";
 }
 
-// Função para criar um elemento de card com base nos dados fornecidos
-function createCardElement(data) {
-  const card = document.createElement('div');
-  card.classList.add('card', 'card-item', 'clickable-card', data.type, data.suit);
-  card.dataset.name = data.name; // Adiciona o atributo data-name com o valor do nome
-
-  const frontElement = document.createElement('div');
-  frontElement.classList.add('card-front');
-
-  const imageElement = document.createElement('img');
-  imageElement.src = data.img;
-  imageElement.classList.add('card-image');
-
-  frontElement.appendChild(imageElement);
-  card.appendChild(frontElement);
-
-  const backElement = document.createElement('div');
-  backElement.classList.add('card-back');
-
-  const nameElement = document.createElement('h2');
-  nameElement.textContent = data.name;
-  nameElement.classList.add('hidden');
-
-  const meaningElement = document.createElement('p');
-  meaningElement.textContent = data.meaning_up;
-  meaningElement.classList.add('hidden');
-
-  backElement.appendChild(nameElement);
-  backElement.appendChild(meaningElement);
-  card.appendChild(backElement);
-
-  card.addEventListener('click', function () {
-    flipCard(card);
-  });
-
-  return card;
-}
-
-// Função para ativar o link de filtro atual e desativar os demais
-function activateFilterLink(link) {
-  const filterLinks = document.querySelectorAll('.filtro01 a');
-  filterLinks.forEach((filterLink) => {
-    filterLink.classList.remove('active');
-  });
-
-  link.classList.add('active');
-}
-
-
-// Event listener para o link "Arcanos Maiores"
-linkBigger.addEventListener('click', function () {
-  if (currentFilter !== 'maior') { 
-    currentFilter = 'maior';
-    activateFilterLink(linkBigger);
+const showInDisplay = (link) => {
+  link.addEventListener("click", () => {
+    activateFilterLink(link);
     displayCards(filters); // Exibe apenas os arcanos maiores
-  }
-});
+  });
+};
 
-// Event listener para o link "Arcanos Menores"
-linkMinors.addEventListener('click', function () {
-  if (currentFilter !== 'menor') { 
-    currentFilter = 'menor';
-    activateFilterLink(linkMinors);
-    displayCards(filters); // Exibe apenas os arcanos menores
-  }
-});
+showInDisplay(linkBigger);
+showInDisplay(linkMinors);
+showInDisplay(linkCardall);
+showInDisplay(linkCopas);
+showInDisplay(linkOuros);
+showInDisplay(linkPaus);
+showInDisplay(linkEspadas);
 
-// Event listener para o link "Todas as Cartas"
-linkCardall.addEventListener('click', function () {
-  if (currentFilter !== 'all') {
-    currentFilter = 'all';
-    activateFilterLink(linkCardall);
-    displayCards(filters); // Exibe todas as cartas, passando uma lista vazia
-  }
-});
+//sortCardsByName(card,sortOrder)
+// Aplica a ordenação se o parâmetro de ordenação estiver presente
+displayCards(filters);
 
-// Event listener para o link "Copas"
-linkCopas.addEventListener('click', function () {
-  if (currentFilter !== 'copas') { 
-    currentFilter = 'copas';
-    activateFilterLink(linkCopas);
-    displayCards(filters); // Exibe apenas as cartas de copas
-  }
-});
+const allCards = document.querySelectorAll(".card");
 
-// Event listener para o link "Ouros"
-linkOuros.addEventListener('click', function () {
-  if (currentFilter !== 'ouros') {
-    currentFilter = 'ouros';
-    activateFilterLink(linkOuros);
-    displayCards(filters); // Exibe apenas as cartas de ouros
-  }
-});
+if (sortParam !== "none") {
+  let cssClass = "";
+  let listClass = [];
+  let ordenedElements = [];
 
-// Event listener para o link "Paus"
-linkPaus.addEventListener('click', function () {
-  if (currentFilter !== 'paus') { 
-    currentFilter = 'paus';
-    activateFilterLink(linkPaus);
-    displayCards(filters); // Exibe apenas as cartas de paus
-  }
-});
+  allCards.forEach((card) => {
+    cssClass = card.classList;
+    listClass.push(cssClass[5]);
+  });
 
-// Event listener para o link "Espadas"
-linkEspadas.addEventListener('click', function () {
-  if (currentFilter !== 'espadas') { 
-    currentFilter = 'espadas';
-    activateFilterLink(linkEspadas);
-    displayCards(filters); // Exibe apenas as cartas de espadas
-  }
-});
+  if (sortParam === "name-asc") {
 
+    listClass.sort((a, b) => a.localeCompare(b, undefined, { ignorePunctuation: true }));
+
+    ordenedElements = Array.from(allCards).sort((a, b) => {
+      const classeA = a.classList[a.classList.length - 2];
+      const classeB = b.classList[b.classList.length - 2];
+      return listClass.indexOf(classeA) - listClass.indexOf(classeB);
+    });
+
+  } else if (sortParam === "name-desc") {
+
+    listClass.sort((a, b) => b.localeCompare(a, undefined, { ignorePunctuation: true }));
+
+    ordenedElements = Array.from(allCards).sort((a, b) => {
+      const classeA = a.classList[a.classList.length - 2];
+      const classeB = b.classList[b.classList.length - 2];
+      return listClass.indexOf(classeA) - listClass.indexOf(classeB);
+    });
+  }
+
+  ordenedElements.forEach(element => {
+    element.classList.remove("hidden");
+    container.appendChild(element);
+  });
+
+}
