@@ -1,9 +1,9 @@
-import { example, anotherExample } from '../src/data.js';
+import { displayCards } from '../src/data.js';
 
 
-describe('example', () => {
+describe('displayCards', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filt).toBe('function');
   });
 
   it('returns `example`', () => {

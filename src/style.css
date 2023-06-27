@@ -261,6 +261,15 @@ input {
   z-index: 1;
 }
 
+.porcentage {
+  position: relative;
+  right: 550px;
+  text-align: right;
+  color:#FFFFFF;
+}
+
+
+
 .displaytext {
   position: relative;
   text-align: center;

@@ -62,9 +62,11 @@ function createCardElement(data) {
   }
 }
 
-// Função para criar um elemento de card com base nos dados fornecidos
 function displayCards(filters) {
   const cardElements = container.querySelectorAll(".card");
+  const totalCount = cardElements.length;
+  const countByFilter = {};
+
   cardElements.forEach((card) => {
     let shouldDisplay = false;
     filters.forEach((filter) => {
@@ -74,6 +76,7 @@ function displayCards(filters) {
         card.classList.contains(filter)
       ) {
         shouldDisplay = true;
+        countByFilter[filter] = (countByFilter[filter] || 0) + 1;
       }
     });
 
@@ -83,6 +86,59 @@ function displayCards(filters) {
       card.classList.add("hidden");
     }
   });
+
+  const porcentageContainer = document.querySelector("#porcentageContainer");
+  porcentageContainer.innerHTML = "";
+
+Object.entries(countByFilter).forEach(([filter, count]) => {
+    const porcentage = Math.round((count / totalCount) * 100);
+    const filterLabel = getFilterLabel(filter);
+
+    const porcentageElement = document.createElement("span");
+    porcentageElement.textContent = `${filterLabel}: ${porcentage}%`;
+
+    // Adicionando a classe "hidden" para ocultar os elementos de porcentagem
+    if (filterLabel !== "") {
+      porcentageElement.classList.add("hidden");
+    }
+
+    porcentageContainer.appendChild(porcentageElement);
+  });
+  const clickToLearnMore = document.createElement("span");
+  clickToLearnMore.textContent = "  Quer sarber mais informações? clique nas cartas!!";
+  porcentageContainer.appendChild(clickToLearnMore);
+}
+
+
+function getFilterLabel(filter) {
+  let filterLabel = "";
+  switch (filter) {
+    case "maior":
+      filterLabel = "";
+      break;
+    case "menor":
+      filterLabel = "";
+      break;
+    case "all":
+      filterLabel = "";
+      break;
+    case "copas":
+      filterLabel = "";
+      break;
+    case "ouros":
+      filterLabel = "";
+      break;
+    case "paus":
+      filterLabel = "";
+      break;
+    case "espadas":
+      filterLabel = "";
+      break;
+    default:
+      filterLabel = "";
+      break;
+  }
+  return filterLabel;
 }
 // Função para ativar o link de filtro atual e desativar os demais
 function activateFilterLink(link) {
@@ -99,9 +155,9 @@ function sortCardsByName(cards, sortOrder) {
   cards.sort((a, b) => {
     const nameA = a.name.toUpperCase();
     const nameB = b.name.toUpperCase();
-    if (sortOrder == "name-asc") {
+    if (sortOrder === "name-asc") {
       return nameA.localeCompare(nameB);
-    } else if (sortOrder == "name-desc") {
+    } else if (sortOrder === "name-desc") {
       return nameB.localeCompare(nameA);
     } else {
       return 0;

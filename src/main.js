@@ -176,5 +176,4 @@ if (sortParam !== "none") {
     element.classList.remove("hidden");
     container.appendChild(element);
   });
-
 }
