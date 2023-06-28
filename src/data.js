@@ -11,7 +11,8 @@ function createCardElement(data) {
   );
 
   
-
+/*A função createCardElement é responsável por criar um elemento de card com base nos dados fornecidos. 
+Ele cria elementos HTML dinamicamente e os estiliza com classes e conteúdo apropriados.*/
   const frontElement = document.createElement("div");
   frontElement.classList.add("card-front");
 
@@ -37,13 +38,15 @@ function createCardElement(data) {
   backElement.appendChild(meaningElement);
   card.appendChild(backElement);
 
-  // flip
+  //Ao clicar vira o card
   card.addEventListener("click", function () {
     flipCard(card);
   });
 
   return card;
-  // Função para virar o card ao ser clicado
+
+/*A função flipCard é uma função auxiliar dentro de createCardElement que é responsável por virar o card quando ele é clicado. Ela adiciona ou remove a classe
+   "flipped" no elemento do card e ajusta a exibição dos elementos da frente e de trás.*/
   function flipCard(card) {
     card.classList.toggle("flipped");
 
@@ -63,7 +66,7 @@ function createCardElement(data) {
     }
   }
 }
-
+/*A função displayCards recebe um array de filtros como parâmetro e exibe os cards correspondentes aos filtros seleciona*/
 function displayCards(filters) {
   const cardElements = container.querySelectorAll(".card");
   const totalCount = cardElements.length;
@@ -111,7 +114,8 @@ Object.entries(countByFilter).forEach(([filter, count]) => {
   porcentageContainer.appendChild(clickToLearnMore);
 }
 
-
+/*A função activateFilterLink é responsável por ativar o link de filtro atual e desativar os demais. 
+Ela remove a classe "active" de todos os links de filtro e adiciona essa classe apenas ao link atual.*/
 function getFilterLabel(filter) {
   let filterLabel = "";
   switch (filter) {
@@ -142,7 +146,9 @@ function getFilterLabel(filter) {
   }
   return filterLabel;
 }
-// Função para ativar o link de filtro atual e desativar os demais
+
+/*A função activateFilterLink é responsável por ativar o link de filtro atual e desativar os demais. Ela remove a 
+classe "active" de todos os links de filtro e adiciona essa classe apenas ao link atual.*/
 function activateFilterLink(link) {
   const filterLinks = document.querySelectorAll(".filtro01 a");
   filterLinks.forEach((filterLink) => {
@@ -151,8 +157,8 @@ function activateFilterLink(link) {
 
   link.classList.add("active");
 }
-
-// Função para ordenar as cartas por nome
+/*A função sortCardsByName é responsável por ordenar os cards por nome,
+ com base na opção de classificação fornecida.*/
 function sortCardsByName(cards, sortOrder) {
   cards.sort((a, b) => {
     const nameA = a.name.toUpperCase();
