@@ -57,7 +57,7 @@ CSS: Utilizamos CSS para estilizar a página, aplicando layouts, cores, fontes e
 Para criar o protótipo de baixa fidelidade, utilizamos duas abordagens diferentes:
 
 Desenho à mão com caneta e papel: Inicialmente, começamos esboçando o layout e a disposição dos elementos da página em um papel. Usamos caneta para criar uma representação visual básica das seções, botões, menus e conteúdos principais. Essa abordagem permite uma rápida iteração e exploração de diferentes ideias.
-
+![papel](src/readme/papel.jpeg)
 Ferramenta Paint: Em seguida, transferimos o esboço do papel para a ferramenta Paint em um computador. Utilizamos ferramentas básicas de desenho, como formas geométricas e pincéis, para criar uma versão digital do protótipo. Embora simples, essa abordagem nos permitiu visualizar melhor o layout e a estrutura da página.
 ![paint](src/readme/PAINT.png)
 
