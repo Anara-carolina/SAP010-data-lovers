@@ -10,6 +10,8 @@ function createCardElement(data) {
     data.name.replace(/\s/g, "")
   );
 
+  
+
   const frontElement = document.createElement("div");
   frontElement.classList.add("card-front");
 
@@ -95,7 +97,7 @@ Object.entries(countByFilter).forEach(([filter, count]) => {
     const filterLabel = getFilterLabel(filter);
 
     const porcentageElement = document.createElement("span");
-    porcentageElement.textContent = `${filterLabel}: ${porcentage}%`;
+    porcentageElement.textContent = `${filterLabel} Possui um total de: ${porcentage}%`;
 
     // Adicionando a classe "hidden" para ocultar os elementos de porcentagem
     if (filterLabel !== "") {
@@ -105,7 +107,7 @@ Object.entries(countByFilter).forEach(([filter, count]) => {
     porcentageContainer.appendChild(porcentageElement);
   });
   const clickToLearnMore = document.createElement("span");
-  clickToLearnMore.textContent = "  Quer sarber mais informações? clique nas cartas!!";
+  clickToLearnMore.textContent = "  Quer sarber mais informações? clique nos cards!";
   porcentageContainer.appendChild(clickToLearnMore);
 }
 
