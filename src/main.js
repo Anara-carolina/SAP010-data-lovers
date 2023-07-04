@@ -2,8 +2,7 @@ import cardData from "./tarot.js";
 import {
   createCardElement,
   displayCards,
-  activateFilterLink,
-  sortCardsByName,
+  activateFilterLink
 } from "./data.js";
 
 const container = document.querySelector("#cardContainer");
