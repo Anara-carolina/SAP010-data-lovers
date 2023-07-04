@@ -1,8 +1,3 @@
-/*const cardTarot =[]
-export default cardTarot;*/
-
-//import cardData from "./tarot";
-
 const container = document.querySelector("#cardContainer");
 function createCardElement(data) {
   const card = document.createElement("div");
@@ -15,6 +10,9 @@ function createCardElement(data) {
     data.name.replace(/\s/g, "")
   );
 
+  
+/*A função createCardElement é responsável por criar um elemento de card com base nos dados fornecidos. 
+Ele cria elementos HTML dinamicamente e os estiliza com classes e conteúdo apropriados.*/
   const frontElement = document.createElement("div");
   frontElement.classList.add("card-front");
 
@@ -40,13 +38,15 @@ function createCardElement(data) {
   backElement.appendChild(meaningElement);
   card.appendChild(backElement);
 
-  // flip
+  //Ao clicar vira o card
   card.addEventListener("click", function () {
     flipCard(card);
   });
 
   return card;
-  // Função para virar o card ao ser clicado
+
+/*A função flipCard é uma função auxiliar dentro de createCardElement que é responsável por virar o card quando ele é clicado. Ela adiciona ou remove a classe
+   "flipped" no elemento do card e ajusta a exibição dos elementos da frente e de trás.*/
   function flipCard(card) {
     card.classList.toggle("flipped");
 
@@ -66,10 +66,12 @@ function createCardElement(data) {
     }
   }
 }
-
-// Função para criar um elemento de card com base nos dados fornecidos
+/*A função displayCards recebe um array de filtros como parâmetro e exibe os cards correspondentes aos filtros seleciona*/
 function displayCards(filters) {
   const cardElements = container.querySelectorAll(".card");
+  const totalCount = cardElements.length;
+  const countByFilter = {};
+
   cardElements.forEach((card) => {
     let shouldDisplay = false;
     filters.forEach((filter) => {
@@ -79,6 +81,7 @@ function displayCards(filters) {
         card.classList.contains(filter)
       ) {
         shouldDisplay = true;
+        countByFilter[filter] = (countByFilter[filter] || 0) + 1;
       }
     });
 
@@ -88,8 +91,64 @@ function displayCards(filters) {
       card.classList.add("hidden");
     }
   });
+
+  const porcentageContainer = document.querySelector("#porcentageContainer");
+  porcentageContainer.innerHTML = "";
+
+Object.entries(countByFilter).forEach(([filter, count]) => {
+    const porcentage = Math.round((count / totalCount) * 100);
+    const filterLabel = getFilterLabel(filter);
+
+    const porcentageElement = document.createElement("span");
+    porcentageElement.textContent = `${filterLabel} Possui um total de: ${porcentage}%`;
+
+    // Adicionando a classe "hidden" para ocultar os elementos de porcentagem
+    if (filterLabel !== "") {
+      porcentageElement.classList.add("hidden");
+    }
+
+    porcentageContainer.appendChild(porcentageElement);
+  });
+  const clickToLearnMore = document.createElement("span");
+  clickToLearnMore.textContent = "  Quer sarber mais informações? clique nos cards!";
+  porcentageContainer.appendChild(clickToLearnMore);
 }
-// Função para ativar o link de filtro atual e desativar os demais
+
+/*A função activateFilterLink é responsável por ativar o link de filtro atual e desativar os demais. 
+Ela remove a classe "active" de todos os links de filtro e adiciona essa classe apenas ao link atual.*/
+function getFilterLabel(filter) {
+  let filterLabel = "";
+  switch (filter) {
+    case "maior":
+      filterLabel = "";
+      break;
+    case "menor":
+      filterLabel = "";
+      break;
+    case "all":
+      filterLabel = "";
+      break;
+    case "copas":
+      filterLabel = "";
+      break;
+    case "ouros":
+      filterLabel = "";
+      break;
+    case "paus":
+      filterLabel = "";
+      break;
+    case "espadas":
+      filterLabel = "";
+      break;
+    default:
+      filterLabel = "";
+      break;
+  }
+  return filterLabel;
+}
+
+/*A função activateFilterLink é responsável por ativar o link de filtro atual e desativar os demais. Ela remove a 
+classe "active" de todos os links de filtro e adiciona essa classe apenas ao link atual.*/
 function activateFilterLink(link) {
   const filterLinks = document.querySelectorAll(".filtro01 a");
   filterLinks.forEach((filterLink) => {
@@ -98,15 +157,15 @@ function activateFilterLink(link) {
 
   link.classList.add("active");
 }
-
-// Função para ordenar as cartas por nome
+/*A função sortCardsByName é responsável por ordenar os cards por nome,
+ com base na opção de classificação fornecida.*/
 function sortCardsByName(cards, sortOrder) {
   cards.sort((a, b) => {
     const nameA = a.name.toUpperCase();
     const nameB = b.name.toUpperCase();
-    if (sortOrder == "name-asc") {
+    if (sortOrder === "name-asc") {
       return nameA.localeCompare(nameB);
-    } else if (sortOrder == "name-desc") {
+    } else if (sortOrder === "name-desc") {
       return nameB.localeCompare(nameA);
     } else {
       return 0;

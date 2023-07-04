@@ -33,7 +33,19 @@ input {
   border-radius: 20px;
   border: 1px solid #d1cccc;
   margin: 15px;
-  position: fixed;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  display: none;
+}
+
+.search {
+  width: 100%;
+  background-color: black;
+  display: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu {
@@ -44,6 +56,14 @@ input {
   display: flex;
   padding: 15px;
 }
+.porcentage {
+  position: relative;
+  right: 550px;
+  text-align: right;
+  color:#FFFFFF;
+}
+
+
 
 .chec {
   display: none;
@@ -144,7 +164,6 @@ input {
   margin-right: 20px; /* Define a margem esquerda para criar espaço entre a imagem e o conteúdo */
   filter: grayscale(60%) sepia(40%) brightness(80%) contrast(120%);
 }
-/*cards*/
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -236,7 +255,6 @@ input {
   font-size: 30px;
 }
 
-/*foother*/
 .display {
   position: absolute;
   width: 100%;
@@ -288,6 +306,13 @@ input {
   body {
     overflow: hidden;
   }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
   .menu {
     width: 55px;
     border-radius: 50px;
@@ -353,6 +378,13 @@ input {
   body {
     overflow: hidden;
   }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
   .menu {
     width: 55px;
     border-radius: 50px;
@@ -419,6 +451,13 @@ input {
   body {
     overflow: hidden;
   }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
   .menu {
     width: 55px;
     border-radius: 50px;
@@ -480,6 +519,13 @@ input {
   body {
     overflow: hidden;
   }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
   .menu {
     width: 55px;
     border-radius: 50px;

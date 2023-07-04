@@ -15,16 +15,47 @@ const linkCopas = document.querySelector(".copas");
 const linkOuros = document.querySelector(".ouros");
 const linkPaus = document.querySelector(".paus");
 const linkEspadas = document.querySelector(".espadas");
-
-const linkOrda = document.querySelector(".orda");
-const linkOrdz = document.querySelector(".ordz");
-
 const urlParams = new URLSearchParams(window.location.search);
 const filterType = urlParams.get("type");
 const filterSuit = urlParams.get("suit");
 const sortParam = urlParams.get("sort");
 
-// Limpa o container antes de adicionar os cards
+
+const cardSearchInput = document.querySelector('#cardSearchInput');
+cardSearchInput.addEventListener('input', function () {
+  const cardName = cardSearchInput.value;
+  displayCardByName(cardName);
+});
+
+function displayCardByName(cardName) {
+  const trimmedCardName = cardName.trim(); 
+
+  if (trimmedCardName === '') {
+    titleElement.textContent = ''; 
+    container.innerHTML = ''; 
+    sortCardsByName(cardData, sortParam);
+    for (let i = 0; i < cardData.length; i++) {
+      const card = createCardElement(cardData[i]);
+      container.appendChild(card);
+    }
+    return; 
+  }
+
+  const filteredCards = cardData.filter((card) => card.name.toLowerCase().startsWith(trimmedCardName.toLowerCase()));
+
+  if (filteredCards.length > 0) {
+    container.innerHTML = '';
+
+    filteredCards.forEach((card) => {
+      const cardElement = createCardElement(card);
+      container.appendChild(cardElement);
+    });
+  } else {
+    container.innerHTML = 'Nenhuma carta encontrada.';
+  }
+}
+
+
 container.innerHTML = "";
 // Cria os cards ordenados e adiciona-os ao container
 for (let i = 0; i < cardData.length; i++) {
@@ -133,5 +164,5 @@ if (sortParam !== "none") {
     element.classList.remove("hidden");
     container.appendChild(element);
   });
-
 }
+ 

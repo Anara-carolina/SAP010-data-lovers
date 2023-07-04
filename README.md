@@ -1,650 +1,119 @@
-# Data Lovers
-
-## Índice
+![cartas](src/readme/cartas.png)
 
-* [1. Preâmbulo](#1-preâmbulo)
-* [2. Resumo do projeto](#2-resumo-do-projeto)
-* [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-* [4. Considerações gerais](#4-considerações-gerais)
-* [5. Critérios mínimos de aceitação do
-  projeto](#5-critérios-mínimos-de-aceitação-do-projeto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Considerações técnicas](#7-considerações-técnicas)
-* [8. Pistas, dicas e leituras
-  complementares](#8-pistas-dicas-e-leituras-complementares)
-* [9. Checklist](#9-checklist)
+## 1. O que é tarot?
+O tarot é um baralho com 78 cartas, chamadas de arcanos, que são divididos em dois grupos: os arcanos maiores (22) e os arcanos menores (56). 
 
-***
+Os arcanos maiores representam arquétipos da sociedade e do imaginário coletivo, representando partes de nós que não podem ser mudadas, como ideias, forças e possibilidades inatas. Ex.: O Papa, A Roda da Fortuna, A Sacerdotisa. 
 
-## 1. Preâmbulo
+Já os arcanos menores aparecem para complementar os arcanos maiores e representam especificações e características que podem ser mudadas dentro de uma situação. Eles são bastante conhecidos por quase todo mundo, já que são muito utilizados para jogos recreativos. Ex.: Dois de Paus, Cinco de Ouros, Rainha de Copas. 
+## 2. Do que se trata o tarô? 
+O tarot é um oráculo que pode auxiliar o consulente (pessoa que se beneficia da leitura) em sua jornada de autoconhecimento. Existem dois tipos de prática no tarot: a divinatória, que consiste em previsões do futuro e a terapêutica, que proporciona uma análise mais a fundo de situações, sem prever o que vai acontecer. 
 
-Segundo a
-[Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read)
-90% dos dados que existem hoje foram gerados durante os últimos dois anos. A
-cada dia geramos 2.5 milhões de terabytes de dados, uma cifra sem precedentes.
+O tarot considera sempre que as ações moldam o destino, portanto, o livre arbítrio do consulente sempre é levado em conta. Mesmo na modalidade divinatória, a previsão não se trata de uma sentença. Já na modalidade terapêutica, o tarot auxilia na autocompreensão, no autocuidado e na autorreflexão de aspectos da vida. 
 
-Apesar disso, os dados por si só são de pouca utilidade. Para que essas grandes
-quantidades de dados se convertam em **informação** compreensível para os
-usuários, precisamos entender e processar estes dados. Uma forma simples de
-fazer isso é criando _interfaces_ e _visualizações_.
+## 3. Sobre o projeto.
 
-Na imagem seguinte, você pode ver como os dados que estão na parte esquerda
-podem ser usados para construir a interface amigável e compreensível que está na
-parte direita.
+Este projeto foi desenvolvido em dupla como parte do bootcamp da Laboratoria. Utilizamos as linguagens de programação JavaScript, HTML e CSS com o objetivo de aprender e praticar conceitos como filtros, ordenação de itens, manipulação do DOM e aprimorar o uso de funções e loops.
 
-![pokemon-data-to-ui](https://user-images.githubusercontent.com/12631491/218505816-c6d11758-9de4-428f-affb-2a56ea4d68c4.png)
+Durante a realização do projeto, contamos com ferramentas como o VS Code, Node.js, Figma, Git e GitHub para facilitar o desenvolvimento e o versionamento do código. Essas ferramentas nos auxiliaram na criação e organização do projeto, permitindo trabalhar de forma colaborativa e garantindo um controle de versão eficiente.
 
-## 2. Resumo do projeto
+O foco principal do projeto foi a aplicação dos conceitos de filter, que nos permitiu filtrar e ordenar os itens selecionados, proporcionando uma experiência mais interativa para os usuários. Além disso, também buscamos melhorar nossas habilidades na manipulação do DOM, tornando a interface mais dinâmica e responsiva.
 
-Neste projeto você **construirá uma _página web_ para visualizar um _conjunto
-(set) de dados_** que se adeque às necessidades de seu usuário.
+No geral, o projeto foi uma oportunidade de aplicar e consolidar os conhecimentos adquiridos durante o bootcamp, além de nos desafiar a aprimorar nossas habilidades técnicas e de trabalho em equipe.
 
-Como entregável final terá uma página web que permita **visualizar dados,
-filtrá-los, ordená-los e fazer algum cálculo agregado**. Por cálculo agregado
-nos referimos aos diversos cálculos que podem ser feitos com os dados para
-mostrar a informação mais relevante para os usuários (médias, valores máximos e
-mínimos, etc).
+## 4. Objetivo!
+O projeto "Data Lovers" tem como objetivo principal criar uma plataforma dedicada ao mundo do Tarot. Decidimos nomeá-lo de "Busca Espiritual". Desenvolvemos essa página de forma responsiva, garantindo uma experiência consistente em diferentes dispositivos, como tablets, smartphones, iPads e computadores.
 
-Para este projeto trazemos uma série de dados de _temáticas diferentes_ para que
-você explore e decida com qual delas deseja trabalhar. Escolhemos
-especificamente estes conjuntos de dados porque cremos que se adequem bem a esta
-etapa de sua aprendizagem.
+A plataforma permite aos usuários apaixonados pelo Tarot visualizar todas as cartas disponíveis. Implementamos filtros por meio de um menu com links para facilitar a navegação. Os filtros incluem opções para arcanos maiores, arcanos menores e baralhos de copas, ouros, paus e espadas. Além disso, incorporamos opções de ordenação alfabética, permitindo que o usuário ordene as cartas de A a Z ou de Z a A.
 
-Uma vez que você defina sua área de interesse, busque entender quem é seu
-usuário e o que exatamente ele necessita saber ou ver, para que assim possa
-construir a interface que o ajude a interagir e entender melhor os dados.
+Para facilitar ainda mais a busca, adicionamos uma caixa de pesquisa. Ao digitar o nome da carta desejada, a carta correspondente é exibida na tela, juntamente com sua imagem e informações relevantes.
 
-Este são os dados que propomos:
+Uma funcionalidade interessante que implementamos é o efeito de "flip" ao clicar em qualquer carta. Isso proporciona uma experiência interativa, onde as informações detalhadas da carta são exibidas ao virá-la.
 
-* [Pokémon](src/data/pokemon/pokemon.json): Neste conjunto você encontrará uma
-  lista com os 251 Pokémon da região de Kanto, com suas respectivas estatísticas
-  utilizadas no jogo [Pokémon GO](http://pokemongolive.com).
-  - [Pesquisa com jogadores de Pokémon Go](src/data/pokemon/README.pt-BR.md)
+Com o projeto "Busca Espiritual", buscamos criar uma plataforma completa e amigável para os entusiastas do Tarot, oferecendo uma maneira intuitiva de explorar e interagir com as cartas.
 
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json): Este
-  conjunto mostra a lista de campeões do jogo League of Legends
-  (LoL).
-  - [Pesquisa com jogadores de LoL](src/data/lol/README.pt-BR.md)
+## 5.Pontos de aprendizado e funcionalidade do projeto "Busca Espiritual":
 
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json). Lista de
-  personagens da série Rick & Morty. Você pode revisar a documentação da API
-  neste [link](https://rickandmortyapi.com).
-  - [Pesquisa com seguidores de Rick and Morty](src/data/rickandmorty/README.pt-BR.md)
+Filtro: Aprendemos a utilizar o recurso de filtro para permitir que os usuários selecionem categorias específicas, como arcanos maiores, arcanos menores e diferentes tipos de baralhos. Isso proporciona uma maneira fácil e intuitiva de explorar as cartas de Tarot de acordo com suas preferências.
 
-* [Jogos Olímpicos do Rio de Janeiro](src/data/athletes/athletes.json).
-   Este conjunto nos fornece a lista de atletas que conquistaram medalhas nas
-   Olimpíadas do Rio de Janeiro.
-  - [Pesquisa com stakeholders dos Jogos Olímpicos do Rio de Janeiro](src/data/athletes/README.pt-BR.md)
+Ordenação: Implementamos a funcionalidade de ordenação alfabética das cartas, permitindo que os usuários organizem as cartas em ordem crescente (A-Z) ou decrescente (Z-A). Isso facilita a localização de cartas específicas e a navegação pelo conjunto completo de cartas.
 
-* [Studio Ghibli](src/data/ghibli/ghibli.json).
-  Lista de animações e personagens do [Studio Ghibli](https://ghiblicollection.com/).
-  - [Pesquisa com seguidores de Studio Ghibli](src/data/ghibli/README.pt-BR.md)
+Função para cálculo de porcentagem: Desenvolvemos uma função para calcular a porcentagem de cartas exibidas em relação ao número total de cartas disponíveis. Essa funcionalidade fornece aos usuários uma visão estatística das cartas exibidas, ajudando-os a entender a distribuição das diferentes categorias.
 
+Utilização do "for" para criação dos cards: Utilizamos o loop "for" para iterar sobre os dados das cartas e criar elementos de cartas dinamicamente. Isso permite que o número de cartas seja escalável e flexível, pois o código pode se adaptar a qualquer quantidade de cartas presente nos dados.
 
-* [Breaking Bad](src/data/breakingbad/breakingbad.json): Neste conjunto você encontrará uma
-  lista com personagens da série Breaking Bad.
-  - [Pesquisa com seguidores Breaking Bad](src/data/breakingbad/README.pt.md)
+Manipulação de DOM: Aprendemos a manipular o Document Object Model (DOM) para adicionar e remover elementos, alterar estilos e atributos, e interagir com o conteúdo da página. Essa habilidade é fundamental para criar uma experiência interativa e responsiva para os usuários.
 
-* [Países](src/data/countries/countries.json): Neste conjunto você encontrará uma
-  lista de países.
-  - [Pesquisa com estudantes de geografia](src/data/countries/README.pt.md)
+Importação de módulos: Utilizamos a capacidade de importar módulos para organizar e reutilizar o código de maneira eficiente. Dividimos o projeto em diferentes arquivos, como tarot.js e data.js, para separar a lógica das cartas e dos dados. Em seguida, importamos esses módulos onde necessário para utilizar suas funcionalidades.
 
-* [Game of Thrones](src/data/got/got.json): Neste conjunto você encontrará uma
-  lista com personagens da série Breaking Bad.
-  - [Pesquisa com seguidores de Game of Thrones](src/data/got/README.pt.md)
+JavaScript puro: O projeto foi desenvolvido utilizando apenas JavaScript puro, sem o uso de bibliotecas ou frameworks adicionais. Isso nos permitiu aprofundar nosso conhecimento da linguagem e compreender melhor seus conceitos e recursos fundamentais.
 
-* [Tarot](src/data/tarot/tarot.json): Neste conjunto você encontrará uma
-  lista com cartas de Tarot.
-  - [Pesquisa com usuários de Tarot](src/data/tarot/README.pt.md)
+HTML semântico: Utilizamos HTML semântico para estruturar e marcar corretamente os elementos da página. Isso melhora a acessibilidade, usabilidade e a indexação pelos motores de busca, além de facilitar a compreensão e manutenção do código.
 
-O objetivo principal deste projeto é que aprenda a desenhar e construir uma
-interface web onde se possa visualizar e manipular dados, entendendo o que o
-usuário necessita.
+CSS: Utilizamos CSS para estilizar a página, aplicando layouts, cores, fontes e efeitos visuais. O uso adequado de CSS contribui para uma experiência visual agradável e coerente, tornando a plataforma atraente e fácil de usar para os usuários.
 
-## 3. Objetivos de aprendizagem
+## 6.Protótipo de baixa fidelidade.  
 
-Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
+Para criar o protótipo de baixa fidelidade, utilizamos duas abordagens diferentes:
 
-### HTML
+Desenho à mão com caneta e papel: Inicialmente, começamos esboçando o layout e a disposição dos elementos da página em um papel. Usamos caneta para criar uma representação visual básica das seções, botões, menus e conteúdos principais. Essa abordagem permite uma rápida iteração e exploração de diferentes ideias.
+![papel](src/readme/papel.jpeg)
+Ferramenta Paint: Em seguida, transferimos o esboço do papel para a ferramenta Paint em um computador. Utilizamos ferramentas básicas de desenho, como formas geométricas e pincéis, para criar uma versão digital do protótipo. Embora simples, essa abordagem nos permitiu visualizar melhor o layout e a estrutura da página.
+![paint](src/readme/PAINT.png)
 
-- [ ] **Uso de HTML semântico**
+O protótipo de baixa fidelidade é uma representação simplificada e não interativa do design, que nos ajuda a ter uma ideia inicial de como os elementos serão dispostos na página. Ele serve como ponto de partida para testes de usabilidade e discussões de design antes de passarmos para protótipos mais detalhados e interativos.
 
-  <details><summary>Links</summary><p>
+## 7.Protótipo de alta fidelidade. 
+Para criar o protótipo de alta fidelidade, utilizamos a ferramenta Figma, que é uma plataforma de design colaborativo. Com o Figma, pudemos criar um protótipo  visualmente mais refinado, que representa de forma precisa a aparência e o comportamento da interface.
+![figma](src/readme/Introdu%C3%A7%C3%A3o%20.png)
+__
+![figma](src/readme/maiorf.png)
+__
+![figma](src/readme/maiores.png)
+__
+![figma](src/readme/nome.png)
+__
+![figma](src/readme/nomev.png)
 
-  * [HTML semântico](https://curriculum.laboratoria.la/pt/topics/html/02-html5/02-semantic-html)
-  * [Semantics in HTML - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
+## 8. Testes.
 
-### CSS
+Realizamos a implementação de testes unitários abrangentes para as funções responsáveis por processar, filtrar, ordenar os dados e calcular estatísticas. Nossos testes foram projetados para garantir o correto funcionamento de cada funcionalidade.
 
-- [ ] **Uso de seletores de CSS**
+Obtivemos uma cobertura total de 100% em relação a statements (sentenças), functions (funções), lines (linhas) e branches (ramos) do arquivo src/data.js. Essa abordagem minuciosa de testes nos permitiu identificar e corrigir possíveis erros, bem como validar a precisão e integridade dos resultados obtidos.
 
-  <details><summary>Links</summary><p>
+Através dos testes unitários, garantimos a confiabilidade do código e a consistência das funcionalidades implementadas. Além disso, a cobertura completa dos testes nos possibilita realizar alterações e melhorias no código com segurança, assegurando que a base de código se mantenha sólida.
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/pt/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/pt_BR/docs/Web/CSS/CSS_Selectors)
-</p></details>
+Continuaremos a investir em testes para manter a qualidade do projeto e garantir um alto nível de confiabilidade em todas as suas funcionalidades.
 
-- [ ] **Modelo de caixa (box model): borda, margem, preenchimento**
+## 9. Equipe. 
 
-  <details><summary>Links</summary><p>
+Cada membro da equipe desempenhou um papel fundamental no desenvolvimento do projeto, contribuindo com suas habilidades técnicas e experiência para o sucesso do mesmo. Juntos, colaboramos de forma eficiente e aproveitamos nossos conhecimentos individuais para entregar um produto de qualidade.
 
-  * [Modelo de Caixa e Display](https://curriculum.laboratoria.la/pt/topics/css/01-css/02-boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
-</p></details>
+<h3>Anara Martins</h3>
 
-- [ ] **Uso de flexbox em CSS**
+LinkedIn: Perfil do LinkedIn
+GitHub: GitHub
 
-  <details><summary>Links</summary><p>
+<h3>Dara Nunes</h3>
 
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#pt-br)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-</p></details>
+LinkedIn: Perfil do LinkedIn
+GitHub: GitHub
 
-### Web APIs
 
-- [ ] **Uso de seletores de DOM**
 
-  <details><summary>Links</summary><p>
+## 10. Checklist
 
-  * [Modificando o DOM](https://curriculum.laboratoria.la/pt/topics/browser/02-dom/03-1-dom-methods-selection)
-  * [Introdução ao DOM - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction)
-  * [Locating DOM elements using selectors - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
-</p></details>
-
-- [ ] **Manipulação de eventos de DOM (listeners, propagação, delegação)**
-
-  <details><summary>Links</summary><p>
-
-  * [Introdução a eventos - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Events)
-  * [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener)
-  * [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/removeEventListener)
-  * [Objeto Event](https://developer.mozilla.org/pt-BR/docs/Web/API/Event)
-</p></details>
-
-- [ ] **Manipulação dinâmica de DOM**
-
-  <details><summary>Links</summary><p>
-
-  * [Introdução ao DOM](https://developer.mozilla.org/pt-BR/docs/DOM/Referencia_do_DOM/Introdu%C3%A7%C3%A3o)
-  * [Node.appendChild() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Node/appendChild)
-  * [Document.createElement() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createElement)
-  * [Document.createTextNode()](https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createTextNode)
-  * [Element.innerHTML - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Element/innerHTML)
-  * [Node.textContent - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Node/textContent)
-</p></details>
-
-### JavaScript
-
-- [ ] **Diferenciar entre tipos de dados primitivos e não primitivos**
-
-- [ ] **Arrays (arranjos)**
-
-  <details><summary>Links</summary><p>
-
-  * [Arranjos](https://curriculum.laboratoria.la/pt/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org//pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
-
-- [ ] **Objetos (key, value)**
-
-  <details><summary>Links</summary><p>
-
-  * [Objetos em JavaScript](https://curriculum.laboratoria.la/pt/topics/javascript/05-objects/01-objects)
-</p></details>
-
-- [ ] **Variáveis (declaração, atribuição, escopo)**
-
-  <details><summary>Links</summary><p>
-
-  * [Valores, tipos de dados e operadores](https://curriculum.laboratoria.la/pt/topics/javascript/01-basics/01-values-variables-and-types)
-  * [Variáveis](https://curriculum.laboratoria.la/pt/topics/javascript/01-basics/02-variables)
-</p></details>
-
-- [ ] **Uso de condicionais (if-else, switch, operador ternário, lógica booleana)**
-
-  <details><summary>Links</summary><p>
-
-  * [Estruturas condicionais e repetitivas](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisões no seu código — condicionais - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
-
-- [ ] **Uso de laços (while, for, for..of)**
-
-  <details><summary>Links</summary><p>
-
-  * [Laços (Loops)](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/02-loops)
-  * [Laços e iterações - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Loops_and_iteration)
-</p></details>
-
-- [ ] **Funções (params, args, return)**
-
-  <details><summary>Links</summary><p>
-
-  * [Funções (controle de fluxo)](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/03-functions)
-  * [Funções clássicas](https://curriculum.laboratoria.la/pt/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/pt/topics/javascript/03-functions/02-arrow)
-  * [Funções — blocos reutilizáveis de código - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
-
-- [ ] **Testes unitários (unit tests)**
-
-  <details><summary>Links</summary><p>
-
-  * [Introdução ao Jest - Documentação oficial](https://jestjs.io/docs/pt-BR/getting-started)
-</p></details>
-
-- [ ] **Módulos de ECMAScript (ES modules)**
-
-  <details><summary>Links</summary><p>
-
-  * [import - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
-</p></details>
-
-- [ ] **Uso de linter (ESLINT)**
-
-- [ ] **Uso de identificadores descritivos (Nomenclatura e Semântica)**
-
-- [ ] **Diferença entre expressões (expressions) e declarações (statements)**
-
-### Controle de Versões (Git e GitHub)
-
-- [ ] **Git: Instalação e configuração**
-
-- [ ] **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
-
-- [ ] **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
-
-- [ ] **GitHub: Criação de contas e repositórios, configuração de chave SSH**
-
-- [ ] **GitHub: Implantação com GitHub Pages**
-
-  <details><summary>Links</summary><p>
-
-  * [Site oficial do GitHub Pages](https://pages.github.com/)
-</p></details>
-
-- [ ] **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
-
-### Centrado no usuário
-
-- [ ] **Desenhar e desenvolver um produto ou serviço colocando as usuárias no centro**
-
-### Design de produto
-
-- [ ] **Criar protótipos para obter feedback e iterar**
-
-- [ ] **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
-
-### Pesquisa
-
-- [ ] **Planejar e executar testes de usabilidade**
-
-## 4. Considerações gerais
-
-* Este projeto será executado em duplas.
-* O intervalo de tempo estimado para concluir o projeto é de 3 a 4 Sprints.
-* Este projeto será entregue através do GitHub e a interface deve ser publicada
-  no [GitHub Pages](https://pages.github.com/).
-
-## 5. Critérios mínimos de aceitação do projeto
-
-Os critérios considerados para que tenha terminado este projeto são:
-
-### Definição de produto
-
-Documente brevemente seu trabalho no arquivo `README.md` de seu repositório,
-contando como foi o processo de desenho e como você acredita que o produto possa
-resolver o problema (ou problemas) de seu usuário.
-
-### Histórias de usuário
-
-Uma vez que entenda a necessidade dos usuários, escreva as [Historias de
-Usuario](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) que
-representem tudo que o usuário precisa fazer/ver. As **histórias de usuário**
-devem ser o resultado de seu processo de investigação/pesquisa de seus usuários.
-
-Não esqueça de incluir a definição de pronto (_definition of done_) e os
-critérios de aceitação para cada uma.
-
-Na medida do possível, termine uma história de usuário antes de passar para a
-seguinte (cumpra com as definições de pronto + critérios de aceitação).
-
-### Desenho de interface do usuário
-
-#### Protótipo de baixa fidelidade
-
-Durante seu trabalho você deverá fazer e iterar rascunhos de sua solução usando
-lápis e papel. Recomendamos que fotografe todas as iterações que fizer, suba
-para seu repositório e as mencione no `README.md`.
-
-#### Protótipo de alta fidelidade
-
-O passo seguinte é desenhar sua Interface de Usuário (UI - _User Interface_).
-Para isso você deverá aprender a usar alguma ferramenta de _visual design_. Nós
-recomendamos [Figma](https://www.figma.com/) que é uma ferramenta que funciona
-no navegador e no qual é possível criar uma conta gratuita. Mas você é livre
-para usar outros editores gráficos como Illustrator, Photoshop, PowerPoint,
-Keynote, etc. Lembre-se de usar a identidade gráfica correspondente ao arquivo
-de dados que escolher.
-
-O protótipo deve apresentar o que seria _ideal_ em sua solução. Digamos que é o
-que desejaria implementar se tivesse tempo ilimitado para hackear. Não se
-esqueça de incluir em seu protótipo os fundamentos de _visual design_.
-
-#### Testes de usabilidade
-
-Durante o desafio você deverá fazer testes de usabilidade com usuários
-diferentes, e com base nos resultados desses testes, iterar seus desenhos de
-interface. Conte-nos quais problemas de usabilidade você detectou através dos
-testes e como os resolveu na proposta final.
-
-### Implementação da interface de usuário (HTML/CSS/JS)
-
-Após desenhar sua interface de usuário, deverá trabalhar na sua implementação.
-**Não** é necessário que construa a interface exatamente da mesma forma que
-desenhou. Terá um tempo limitado para trabalhar no projeto, então você deve
-priorizar as tarefas.
-
-No mínimo, sua implementação deverá:
-
-1. Mostrar os dados em uma interface: pode ser em cards, tabelas, listas, etc.
-2. Permitir ao usuário interagir com a interface para obter as informações que
-   necessita;
-3. Ser _responsiva_, ou seja, deve ser visualizada sem problemas a partir de
-   diversos tamanhos de tela: celulares, tablets, notebooks, etc.
-4. Que a interface siga os fundamentos de _visual design_.
-
-### Testes unitários
-
-O _boilerplate_ do projeto não inclui testes unitários. Assim, você terá que
-escrever seus próprios testes para as funções encarregadas de _processar_,
-_filtrar_ e _ordenar_ os dados, assim como _calcular_ estatísticas.
-
-Seus testes unitários devem ter cobertura mínima de 70% de _statements_
-(_sentenças_), _functions_ (_funções_), _lines_ (_linhas_), e _branches_
-(_ramos_) do arquivo `src/data.js`, que irá conter suas funções e que está
-detalhado na seção de [Considerações técnicas](#srcdatajs).
-
-## 6. Hacker edition
-
-As seções chamadas _Hacker Edition_ são **opcionais**. Se já tiver terminado
-todos os requisitos anteriores e tiver tempo, pode tentar completá-las. Dessa
-forma, você pode aprofundar e/ou exercitar mais os objetivos de aprendizagem
-deste projeto.
-
-Features/características extra sugeridas:
-
-* Ao invés de consumir dados estáticos do repositório, pode fazer isso de forma
-  dinâmica, carregando um arquivo JSON com `fetch`. A pasta `src/data` contém
-  uma versão `.js` e uma `.json` de cada conjunto de dados.
-* Adicione à sua interface visualização de dados em forma de gráficos. Para
-  isso, recomendamos explorar bibliotecas de gráficos como
-  [Chart.js](https://www.chartjs.org/) ou [Google
-  Charts](https://developers.google.com/chart/).
-* 100% de cobertura nos testes.
-
-## 7. Considerações técnicas
-
-A lógica do projeto deve estar implementada somente em JavaScript (ES6), HTML e
-CSS. Neste projeto não está permitido o uso de bibliotecas e frameworks, apenas
-[vanilla
-JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e),
-com exceção das bibliotecas para gráficos (ver [_Parte
-opcional_](#6-hacker-edition) acima).
-
-O _boilerplate_ contém uma estrutura de arquivos como ponto de partida, assim
-como toda a configuração de dependências:
-
-```text
-.
-├── EXTRA.md
-├── README.md
-├── package.json
-├── src
-|  ├── data (de acordo com o data que forem trabalhar)
-|  |  ├── lol
-|  |  |  ├── lol.js
-|  |  |  ├── lol.json
-|  |  |  └── README.md
-|  |  ├── pokemon
-|  |  |  ├── pokemon.js
-|  |  |  ├── pokemon.json
-|  |  |  └── README.md
-|  |  └── rickandmorty
-|  |  |  ├── rickandmorty.js
-|  |  |  ├── rickandmorty.json
-|  |  |  └── README.md
-|  |  └── athletes
-|  |  |  ├── athletes.js
-|  |  |  ├── athletes.json
-|  |  |  └── README.md
-|  |  └── ghibli
-|  |  |  ├── ghibli.js
-|  |  |  ├── ghibli.json
-|  |  |  └── README.md
-|  |  └── got
-|  |  |  ├── got.js
-|  |  |  ├── got.json
-|  |  |  └── README.md
-|  |  └── breakingbad
-|  |  |  ├── breakingbad.js
-|  |  |  ├── breakingbad.json
-|  |  |  └── README.md
-|  |  └── countries
-|  |  |  ├── countries.js
-|  |  |  ├── countries.json
-|  |  |  └── README.md
-|  |  └── tarot
-|  |  |  ├── tarot.js
-|  |  |  ├── tarot.json
-|  |  |  └── README.md
-|  ├── data.js
-|  ├── index.html
-|  ├── main.js
-|  └── style.css
-└── test
-   └── data.spec.js
-```
-
-### `src/index.html`
-
-Como no projeto anterior, existe um arquivo `index.html`. Como já sabe, aqui
-entra a página que vai ser exibida ao usuário. Também serve para indicar quais
-scripts serão utilizados e juntar tudo o que foi feito.
-
-### `src/main.js`
-
-Recomendamos que utilize `src/main.js` para todos os códigos que tenham a ver
-com a exibição dos dados na tela. Com isto nos referimos basicamente à interação
-com o DOM. Operações como criação de nós, registro de manejadores de eventos
-(_event listeners_ ou _event handlers_) e etc.
-
-Esta não é a única forma de dividir seu código. Pode utilizar mais arquivos e
-pastas, sempre e quando a estrutura estiver clara para suas colegas.
-
-Neste arquivo você encontrará uma séris de _imports comentados_. Para carregar
-diferentes fontes de dados, você deverá "descomentar" estos _imports_. Cada um
-destes _imports_ criará uma variável `data` com os dados correspondentes à fonte
-escolhida.
-
-Por exemplo, se "descomentamos" a seguinte linha:
-
-```js
-// import data from './data/pokemon/pokemon.js';
-```
-
-A linha ficaria assim:
-
-```js
-import data from './data/pokemon/pokemon.js';
-```
-
-E agora teríamos a variável `data` disponível em `src/main.js`.
-
-### `src/data.js`
-
-O coração deste projeto é a manipulação de dados através de arrays e objetos.
-
-Recomendamos que este arquivo contenha toda a funcionalidade que corresponda a
-obter, processar e manipular dados (suas funções):
-
-* `filterData(data, condition)`: esta função receberia os dados e nos retornaria
-  os que cumprem com a condição.
-
-* `sortData(data, sortBy, sortOrder)`: esta função recebe três parâmetros. O
-  primeiro, `data`, nos entrega os dados. O segundo, `sortBy`, diz respeito a
-  qual das informações quer usar para ordenar. O terceiro, `sortOrder`, indica
-  se quer ordenar de maneira crescente ou decrescente.
-
-* `computeStats(data)`: essa função nos permite fazer cálculos estatísticos
-  básicos para serem exibidos de acordo com o que os dados permitem.
-
-Estes nomes de funções e parâmetros são somente referência, o que vocês decidir
-utilizar vai depender da sua implementação.
-
-Estas funções devem ser
-[_puras_](https://imasters.com.br/desenvolvimento/serie-js-e-vida-pure-functions-funcoes-puras)
-e independentes do DOM. Estas funções serão depois usadas a partir do arquivo
-`src/main.js`, ao carregar a página e a cada vez que o usuário interagir com a
-interface (cliques, seleções, filtros, ordenação, etc).
-
-### `src/data`
-
-Nesta pasta estão os dados de diferentes fontes. Você vai encontrar uma pasta
-para cada fonte, e dentro de cada pasta estão dois arquivos: um com a extensão
-`.js` e outro `.json`. Ambos os arquivos contém os mesmos dados; a diferença é
-que podemos usar o `.js` com uma tag `<script>`, enquanto o `.json` servirá
-para, opcionalmnente, ser carregado de forma assíncrona com
-[`fetch()`](https://developer.mozilla.org/pt-br/docs/Web/API/Fetch_API) (ver
-seção da [_Parte Opcional_](#6-hacker-edition)).
-
-### `test/data.spec.js`
-
-Você também deverá fazer os teste unitários das funções implementadas no arquivo
-`data.js`.
-
-***
-
-## 8. Pistas, dicas e leituras complementares
-
-### Primeiros passos
-
-Antes de começar a escrever o código, você deve definir seu produto com base no
-conhecimento que puder obter a respeito de seus usuários. Estas perguntas podem
-ajudar:
-
-* Quem são os usuários principais do produto?
-* Quais são os objetivos dos usuários com relação ao produto?
-* Quais são os dados mais relevantes que querem ver na interface e por quê?
-* Quando utilizam ou utilizariam o produto?
-* Toda sua investigação prévia deve ter como resultado as histórias de usuário
-  de seu projeto.
-* Não faça os protótipos de alta fidelidade de todas as suas histórias. Comece
-  somente pela que necessite para seu Sprint 1.
-
-Quando estiver pronta para codar, sugerimos começar desta forma:
-
-1. Uma das integrantes da dupla deve fazer um :fork_and_knife:
-   [fork](https://help.github.com/articles/fork-a-repo/) do repositório de sua
-   turma (a equipe de formação fornecerá o link). A outra integrante da dupla
-   deve fazer um fork **a partir do repositório de sua companheira** e
-   [configurar](https://gist.github.com/BCasal/026e4c7f5c71418485c1) um `remote`
-   a partir dele.
-2. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   seu _fork_ para seu computador (cópia local).
-3. Instale as dependências do projeto com o comando `npm install`, assumindo que
-   já tenha instalado o [Node.js](https://nodejs.org/) (que inclui
-   [npm](https://docs.npmjs.com/)).
-4. Se tudo correr bem, deve ser capaz de executar os :traffic_light: testes
-   unitários (unit tests) com o comando `npm test`.
-5. Para ver a interface de seu programa no navegador, utilize o comando `npm
-   start` para subir o servidor web no endereço `http://localhost:5000`.
-6. Comece a codar! :rocket:
-
-***
-
-### Conteúdo de referência
-
-#### UX Design (Experiência do usuário)
-
-* Pesquisa com usuarios / entrevistas
-* Princípios de design/UI
-
-#### Desenvolvimento Front-End
-
-* Unidade de testes do curso de JavaScript do LMS.
-* Unidade de arrays do curso de JavaScript do LMS.
-* Unidade de objetos do curso de JavaScript do LMS.
-* Unidade de funções do curso de JavaScript do LMS.
-* Unidade de DOM do curso de JavaScript do LMS.
-* [Array no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* [Array.sort no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-* [Array.map no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-* [Array.filter no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filtro)
-* [Array.reduce no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-* [Array.forEach no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-* [Object.keys no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
-* [Object.entries no
-  MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
-* [Fetch API no MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-* [json.org](https://json.org/json-pt.html)
-* [expressions-vs-statements](https://2ality.com/2012/09/expressions-vs-statements.html)
-* [Tipos de Dados](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Data_structures)
-* [Modulos:
-  Export](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
-* [Modulos:
-  Import](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import)
-
-#### Ferramentas
-
-* [Git](https://git-scm.com/)
-* [GitHub](https://github.com/)
-* [GitHub Pages](https://pages.github.com/)
-* [Node.js](https://nodejs.org/)
-* [Jest](https://jestjs.io/)
-
-#### Organização do trabalho
-
-* [Histórias de Usuário](https://www.youtube.com/watch?v=sEtiCJfXTE8)
-* [Definição de pronto](https://www.youtube.com/watch?v=Kfss63Q42F8)
-* [Critérios de
-  aceitação](https://medium.com/@karladiasn/user-stories-e-crit%C3%A9rios-de-aceita%C3%A7%C3%A3o-317c48403fcd)
-* [Guia para Data
-  Lovers](https://docs.google.com/presentation/d/1bOq8ns5wsvXdksdqYL3aQoxzFQsXTVlyvlV-yxI2oBM/present?token=AC4w5VhHBbEEA9u2w8bm3Ey1Cse349frbg%3A1567540902700&includes_info_params=1&eisi=CM_ytPW4teQCFQrJgQodeTcEZg#slide=id.g5282e1a53f_1_106)
-
-***
-
-## 9. Checklist
-
-* [ ] Usar VanillaJS.
+* [x ] Usar VanillaJS.
 * [ ] Passa pelo linter (`npm run pretest`)
 * [ ] Passa pelos testes (`npm test`)
 * [ ] Testes unitários cobrem um mínimo de 70% de statements, functions, lines e
   branches.
 * [ ] Inclui uma _definição de produto_ clara e informativa no `README.md`.
-* [ ] Inclui histórias de usuário no `README.md`.
-* [ ] Inclui rascunho da solução (protótipo de baixa fidelidade) no `README.md`.
+* [x ] Inclui histórias de usuário no `README.md`.
+* [x ]  Inclui rascunho da solução (protótipo de baixa fidelidade) no `README.md`.
 * [ ] Inclui uma lista de problemas detectados nos testes de usabilidade no
   `README.md`.
 * [ ] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
 * [ ] UI: Permite ordenar dados por um ou mais campos (asc e desc).
-* [ ] UI: Permite filtrar dados com base em uma condição.
-* [ ] UI: É _responsivo_.
+* [x ] UI: Permite filtrar dados com base em uma condição.
+* [x ] UI: É _responsivo_.
