@@ -1,0 +1,601 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: url("tarotimag/estrela.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main {
+  width: 100vw;
+  height: 90vh;
+  
+  
+}
+
+input {
+  width: 14%;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 15px;
+  border-radius: 20px;
+  border: 1px solid #d1cccc;
+  margin: 15px;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+
+}
+
+.search {
+  width: 100%;
+  background-color: black;
+  
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  width: 70px;
+  border-radius: 50px;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  padding: 15px;
+}
+.porcentage {
+  position: relative;
+  right: 550px;
+  text-align: right;
+  color:#FFFFFF;
+}
+
+
+
+.chec {
+  display: none;
+}
+
+.filtro01 {
+  background-color: rgba(119, 111, 111, 0.5);
+  width: 250px;
+  height: 100%;
+  left: -250px;
+  position: fixed;
+  transition: all 0.5s;
+  margin-top: 70px;
+}
+
+.chec[type="checkbox"]:checked + .imgmenu + .filtro01 {
+  transform: translateX(250px);
+}
+
+.lista .bigger,
+.lista .minors,
+.lista .home-page,
+.lista .copas,
+.lista .ouros,
+.lista .paus,
+.lista .espadas,
+.lista .cardall,
+.lista .orda,
+.lista .ordz {
+  display: block;
+  padding: 10px 0;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+  margin-left: 0;
+  text-align: left;
+}
+
+.lista .bigger:hover,
+.lista .minors:hover,
+.lista .home-page:hover,
+.lista .copas:hover,
+.lista .ouros:hover,
+.lista .paus:hover,
+.lista .espadas:hover,
+.lista .cardall:hover,
+.lista .orda:hover,
+.lista .ordz:hover {
+  background-color: bisque;
+  color: black;
+}
+
+.lista {
+  margin-top: 70px;
+  padding: 20px 5px;
+  width: 100%;
+}
+
+.inputBox {
+  margin-bottom: 20px;
+}
+
+.inputBox select {
+  width: 80%;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+/*introdução*/
+.content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: stretch;
+  height: 80vh;
+  width: 80vw;
+  float: right;
+  /*width: calc(100% - 350px);*/
+  padding: 20px;
+}
+
+.content h1 {
+  margin-top: 0;
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+}
+
+.content p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(243, 219, 2, 0.5); /* Adiciona uma sombra */
+}
+
+.imgcartas {
+  position: relative;
+  float: right;
+  margin-right: 20px; /* Define a margem esquerda para criar espaço entre a imagem e o conteúdo */
+  filter: grayscale(60%) sepia(40%) brightness(80%) contrast(120%);
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 250px;
+}
+
+.card {
+  width: calc(50% - 40px);
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 5px;
+  height: 328px;
+  justify-content: center;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 20px;
+  background-color: black;
+}
+
+.card-item {
+  flex-basis: 15%; /* Ajustar a largura dos cards na versão mobile */
+}
+
+.card-image {
+  width: 100%; /* Define a largura da imagem como 100% */
+  height: 100%; /* Define a altura da imagem como 100% */
+  border-radius: 25px;
+  justify-content: center;
+}
+.clickable-card {
+  transition: transform 0.5s ease; /* Adiciona uma transição suave para a transformação */
+}
+
+/* Estilo para os cards quando virados */
+.clickable-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.clickable-card {
+  transition: transform 0.5s ease; /* Adiciona uma transição suave para a transformação */
+}
+
+/* Estilo para os cards quando virados */
+.clickable-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  transform: scaleX(-1);
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+  height: 325px; /* Define uma altura fixa para exibir a barra de rolagem */
+ max-height: 100%;
+}
+
+.card-back h2,
+.card-back p {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+}
+
+.card-front {
+  position: relative;
+}
+
+.titulo {
+  color: #ffffff;
+  margin-top: 100px;
+  align-items: center;
+  display: flex;
+  margin-left: 600px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.display {
+  position: absolute;
+  width: 100%;
+  height: 259.99px;
+  background: #0e0d0d;
+  mix-blend-mode: saturation;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centralizar horizontalmente */
+  z-index: 1;
+}
+
+.displaytext {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
+
+.displaytext h2 {
+  margin-bottom: 10px; /* Ajuste a margem inferior conforme necessário */
+}
+
+.displaytext h3 {
+  margin-bottom: 5px; /* Ajuste a margem inferior conforme necessário */
+}
+
+.img {
+  background-image: url("/SAP010-data-lovers/src/tarotimag/cartas.png");
+  background-repeat: none;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+.space{
+  position: relative;
+}
+
+.text {
+  width: 40vw;
+}
+
+@media screen and (max-width: 1350px) {
+  .text {
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
+  .menu {
+    width: 55px;
+    border-radius: 50px;
+    display: flex;
+    padding: 15px;
+  }
+  
+  .img{
+    width: 150px;
+    height: 100%;
+
+  }
+  
+  main{
+    height: 100%; 
+  }
+
+  .card-container{
+    display: block;
+    margin: 30%;
+  }
+
+  .card-back {
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transform: scaleX(-1);
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    height: 500px; /* Define uma altura fixa para exibir a barra de rolagem */
+    max-height: 100%;
+    font: size 30px; ;
+  }
+  .card {
+    width: 300px;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 5px;
+    height: 545px;
+    justify-content: center;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 20px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  .titulo{
+    margin: 100px;
+  }
+
+  p{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  body {
+    overflow: hidden;
+  }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
+  .menu {
+    width: 55px;
+    border-radius: 50px;
+    display: flex;
+    padding: 15px;
+  }
+  
+  .img{
+    width: 150px;
+    height: 100%;
+
+  }
+  
+  main{
+    height: 100%; 
+  }
+
+  .card-container{
+    display: block;
+    margin: 30%;
+  }
+
+  .card-back {
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transform: scaleX(-1);
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    height: 500px; /* Define uma altura fixa para exibir a barra de rolagem */
+    max-height: 100%;
+    font: size 30px; ;
+  }
+  .card {
+    width: 300px;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 5px;
+    height: 545px;
+    justify-content: center;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 20px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+  
+  .titulo{
+    margin: 250px;
+  }
+
+  p{
+    font-size: 30px;
+  }
+  
+}
+
+@media screen and (max-width: 680px) {
+  body {
+    overflow: hidden;
+  }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
+  .menu {
+    width: 55px;
+    border-radius: 50px;
+    display: flex;
+    padding: 15px;
+  }
+  
+  .img{
+    display: none;
+  }
+  
+  main{
+    height: 100%; 
+  }
+
+  .card-container{
+    display: block;
+    margin: 30%;
+  }
+
+  .card-front img{
+    width: 150px;
+  }
+  .card-back {
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transform: scaleX(-1);
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    height: 200px; /* Define uma altura fixa para exibir a barra de rolagem */
+    max-height: 100%;
+  }
+  .card {
+    width: 150px;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 5px;
+    height: 328px;
+    justify-content: center;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 20px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .titulo{
+    margin: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  body {
+    overflow: hidden;
+  }
+  .porcentage {
+    position: relative;
+    right: 550px;
+    text-align: right;
+    color:#FFFFFF;
+  }
+  
+  .menu {
+    width: 55px;
+    border-radius: 50px;
+    display: flex;
+    padding: 15px;
+  }
+  
+  .img{
+    display: none;
+  }
+  
+  main{
+    height: 100%; 
+  }
+
+  .card-container{
+    display: block;
+    margin: 30%;
+  }
+
+  .card-front img{
+    width: 150px;
+  }
+  .card-back {
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transform: scaleX(-1);
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    height: 200px; /* Define uma altura fixa para exibir a barra de rolagem */
+    max-height: 100%;
+  }
+  .card {
+    width: 150px;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 5px;
+    height: 328px;
+    justify-content: center;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 20px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .titulo{
+    margin: 100px;
+  }
+}
+
+footer{
+  position:static;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+}
+
+.content{
+  height: 90%;
+}
+.cards_pages{
+  height: 100%;
+  top: 0;
+  position: absolute;
+  overflow-y: scroll;
+  width: 100%;
+}
