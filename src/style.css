@@ -36,13 +36,14 @@ input {
   position: absolute;
   right: 30px;
   top: 20px;
-  display: none;
+  display: flex;
 }
+
+
 
 .search {
   width: 100%;
   background-color: black;
-  display: none;
   flex-flow: column;
   justify-content: center;
   align-items: center;
@@ -57,6 +58,7 @@ input {
   padding: 15px;
 }
 .porcentage {
+  display: none;
   position: relative;
   right: 550px;
   text-align: right;
