@@ -108,12 +108,12 @@ GitHub: GitHub
 * [ ] Passa pelos testes (`npm test`)
 * [ ] Testes unitários cobrem um mínimo de 70% de statements, functions, lines e
   branches.
-* [ ] Inclui uma _definição de produto_ clara e informativa no `README.md`.
+* [x ] Inclui uma _definição de produto_ clara e informativa no `README.md`.
 * [x ] Inclui histórias de usuário no `README.md`.
 * [x ]  Inclui rascunho da solução (protótipo de baixa fidelidade) no `README.md`.
 * [ ] Inclui uma lista de problemas detectados nos testes de usabilidade no
   `README.md`.
-* [ ] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
-* [ ] UI: Permite ordenar dados por um ou mais campos (asc e desc).
+* [x ] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
+* [ x] UI: Permite ordenar dados por um ou mais campos (asc e desc).
 * [x ] UI: Permite filtrar dados com base em uma condição.
 * [x ] UI: É _responsivo_.

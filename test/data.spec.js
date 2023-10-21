@@ -1,23 +1,48 @@
-import { displayCards } from '../src/data.js';
+import { sortCardsByName } from '../src/data.js';
 
+describe('sortCardsByName', () => {
+  it('should sort cards by name in ascending order', () => {
+    const cards = [
+      { name: 'Card B' },
+      { name: 'Card A' },
+      { name: 'Card C' },
+    ];
 
-describe('displayCards', () => {
-  it('is a function', () => {
-    expect(typeof filt).toBe('function');
+    sortCardsByName(cards, 'name-asc');
+
+    // Verifica se os cards foram ordenados corretamente
+    expect(cards[0].name).toBe('Card A');
+    expect(cards[1].name).toBe('Card B');
+    expect(cards[2].name).toBe('Card C');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('should sort cards by name in descending order', () => {
+    const cards = [
+      { name: 'Card B' },
+      { name: 'Card A' },
+      { name: 'Card C' },
+    ];
+
+    sortCardsByName(cards, 'name-desc');
+
+    // Verifica se os cards foram ordenados corretamente
+    expect(cards[0].name).toBe('Card C');
+    expect(cards[1].name).toBe('Card B');
+    expect(cards[2].name).toBe('Card A');
   });
-});
 
+  it('should not change the order of cards for an invalid sort order', () => {
+    const cards = [
+      { name: 'Card B' },
+      { name: 'Card A' },
+      { name: 'Card C' },
+    ];
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
+    sortCardsByName(cards, 'invalid-sort-order');
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+    // Verifica se a ordem dos cards não foi alterada
+    expect(cards[0].name).toBe('Card B');
+    expect(cards[1].name).toBe('Card A');
+    expect(cards[2].name).toBe('Card C');
   });
 });
