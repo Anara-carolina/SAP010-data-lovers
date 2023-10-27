@@ -2,8 +2,7 @@ import cardData from "./tarot.js";
 import {
   createCardElement,
   displayCards,
-  activateFilterLink,
-  sortCardsByName,
+  activateFilterLink
 } from "./data.js";
 
 const container = document.querySelector("#cardContainer");
@@ -15,17 +14,12 @@ const linkCopas = document.querySelector(".copas");
 const linkOuros = document.querySelector(".ouros");
 const linkPaus = document.querySelector(".paus");
 const linkEspadas = document.querySelector(".espadas");
-
-
-
 const urlParams = new URLSearchParams(window.location.search);
 const filterType = urlParams.get("type");
 const filterSuit = urlParams.get("suit");
 const sortParam = urlParams.get("sort");
 
 
-
-//imput por nome 
 const cardSearchInput = document.querySelector('#cardSearchInput');
 cardSearchInput.addEventListener('input', function () {
   const cardName = cardSearchInput.value;
@@ -33,17 +27,17 @@ cardSearchInput.addEventListener('input', function () {
 });
 
 function displayCardByName(cardName) {
-  const trimmedCardName = cardName.trim(); // Remove espaços em branco antes e depois do texto
+  const trimmedCardName = cardName.trim(); 
 
   if (trimmedCardName === '') {
-    titleElement.textContent = ''; // Limpa o título do filtro
-    container.innerHTML = ''; // Limpa o container
-    sortCardsByName(cardData, sortParam); // Ordena as cartas novamente
+    titleElement.textContent = ''; 
+    container.innerHTML = ''; 
+    sortCardsByName(cardData, sortParam);
     for (let i = 0; i < cardData.length; i++) {
       const card = createCardElement(cardData[i]);
       container.appendChild(card);
     }
-    return; // Sai da função para evitar a filtragem desnecessária
+    return; 
   }
 
   const filteredCards = cardData.filter((card) => card.name.toLowerCase().startsWith(trimmedCardName.toLowerCase()));
@@ -61,10 +55,6 @@ function displayCardByName(cardName) {
 }
 
 
-
-
-
-// Limpa o container antes de adicionar os cards
 container.innerHTML = "";
 // Cria os cards ordenados e adiciona-os ao container
 for (let i = 0; i < cardData.length; i++) {
@@ -116,11 +106,11 @@ if (filters.length === 1) {
 } else {
   titleElement.textContent = "";
 }
-//exibe as cartas de acordo com os filtros ao clicar nos links 
+
 const showInDisplay = (link) => {
   link.addEventListener("click", () => {
     activateFilterLink(link);
-    displayCards(filters);
+    displayCards(filters); // Exibe apenas os arcanos maiores
   });
 };
 
